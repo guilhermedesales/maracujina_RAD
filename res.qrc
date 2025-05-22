@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/">
+    <file>img/cadastro/data.png</file>
+    <file>img/cadastro/celular.png</file>
+    <file>img/cadastro/curso.png</file>
+    <file>img/cadastro/matricula.png</file>
+    <file>img/cadastro/email.png</file>
+    <file>img/login/user.png</file>
+    <file>img/login/senha.png</file>
+    <file>img/logo.png</file>
+  </qresource>
+</RCC>

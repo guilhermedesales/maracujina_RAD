@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1152</width>
+    <height>648</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Login</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(239, 239, 239);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="maximumSize">
+       <size>
+        <width>800</width>
+        <height>400</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 60px;
+border: 2px solid rgba(0, 0, 0, 25);
+padding: 10px;</string>
+      </property>
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>30</y>
+         <width>201</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/img/logo.png);
+background-color:none;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtFundo2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>180</y>
+         <width>321</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: #30426b;
+border-radius: 10px;
+backgroud-color: none;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnConfirm">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>280</y>
+         <width>261</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: rgb(48, 66, 107);
+    color: white;
+    font: 22pt &quot;helvetica&quot;;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    border-color: rgb(48, 66, 107);
+	background-color:white;
+	color:rgb(48, 66, 107);
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string>LOGIN</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>230</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Helvetica</family>
+         <pointsize>8</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #30426b;
+font: 8pt &quot;Helvetica&quot;;
+border: none;
+padding: 0px</string>
+       </property>
+       <property name="text">
+        <string>Esqueceu a senha</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QWidget" name="widget_3" native="true">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>110</y>
+         <width>41</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/img/login/user.png);
+background-color: none;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtLogin">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>120</y>
+         <width>251</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">backgroud-color: none;
+border-color: none;
+padding: 0px</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>matrícula</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtFundo1">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>110</y>
+         <width>321</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 10px;
+border-color: #30426b;
+backgroud-color: none;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtSenha">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>190</y>
+         <width>251</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">backgroud-color: none;
+border-color: none;
+padding: 0px</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Senha</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="widget_4" native="true">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>180</y>
+         <width>41</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/img/login/senha.png);
+background-color: none;
+margin:5px;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>340</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Helvetica</family>
+         <pointsize>8</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #30426b;
+font: 8pt &quot;Helvetica&quot;;
+border: none;
+padding: 0px</string>
+       </property>
+       <property name="text">
+        <string>Não possui conta?</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnRegistrar">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>340</y>
+         <width>61</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:#30426b;
+background-color: none;
+padding: 0px;
+border-color:white;
+font: 9pt &quot;helvetica&quot;;
+font-weight:bold;
+</string>
+       </property>
+       <property name="text">
+        <string>Registrar</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>230</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>helvetica</family>
+         <pointsize>16</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(48, 66, 107);
+border-color: rgb(48, 66, 107);
+color:white;
+padding: 0px;
+font: 16pt &quot;helvetica&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Entre para continuar sua</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>260</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>helvetica</family>
+         <pointsize>19</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(48, 66, 107);
+color:white;
+border-color: rgb(48, 66, 107);
+font: 19pt &quot;helvetica&quot;;
+font-weight:bold;
+padding:0px</string>
+       </property>
+       <property name="text">
+        <string>Jornada</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>371</width>
+         <height>401</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(48, 66, 107);
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblErro">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>40</y>
+         <width>331</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(226, 17, 63);
+backgroud-color:none;
+border-color:white;
+font: 19pt &quot;helvetica&quot;;
+padding:0px</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_5</zorder>
+      <zorder>widget_2</zorder>
+      <zorder>txtFundo2</zorder>
+      <zorder>btnConfirm</zorder>
+      <zorder>label</zorder>
+      <zorder>txtFundo1</zorder>
+      <zorder>txtLogin</zorder>
+      <zorder>widget_3</zorder>
+      <zorder>txtSenha</zorder>
+      <zorder>widget_4</zorder>
+      <zorder>label_2</zorder>
+      <zorder>btnRegistrar</zorder>
+      <zorder>label_3</zorder>
+      <zorder>label_4</zorder>
+      <zorder>lblErro</zorder>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1152</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
