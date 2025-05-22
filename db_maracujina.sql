@@ -2,4 +2,7 @@
 SELECT * from usuarios;
 desc usuarios;
 
+alter Table usuarios
+drop column data_nascimento;
+
 show tables;

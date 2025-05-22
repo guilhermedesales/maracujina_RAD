@@ -24,7 +24,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
+    <item row="0" column="0">
      <widget class="QFrame" name="frame">
       <property name="maximumSize">
        <size>
@@ -317,7 +317,7 @@ background:none;</string>
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>170</y>
+         <y>180</y>
          <width>251</width>
          <height>21</height>
         </rect>
@@ -343,7 +343,7 @@ padding: 0px</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>160</y>
+         <y>170</y>
          <width>41</width>
          <height>41</height>
         </rect>
@@ -360,7 +360,7 @@ background-color: none;</string>
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>160</y>
+         <y>170</y>
          <width>321</width>
          <height>41</height>
         </rect>
@@ -375,7 +375,7 @@ backgroud-color: none;</string>
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>220</y>
+         <y>240</y>
          <width>251</width>
          <height>21</height>
         </rect>
@@ -401,7 +401,7 @@ padding: 0px</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>210</y>
+         <y>230</y>
          <width>41</width>
          <height>41</height>
         </rect>
@@ -418,7 +418,7 @@ background-color: none;</string>
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>210</y>
+         <y>230</y>
          <width>321</width>
          <height>41</height>
         </rect>
@@ -433,7 +433,7 @@ backgroud-color: none;</string>
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>270</y>
+         <y>300</y>
          <width>251</width>
          <height>21</height>
         </rect>
@@ -462,7 +462,7 @@ padding: 0px</string>
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>260</y>
+         <y>290</y>
          <width>321</width>
          <height>41</height>
         </rect>
@@ -477,7 +477,7 @@ backgroud-color: none;</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>260</y>
+         <y>290</y>
          <width>41</width>
          <height>41</height>
         </rect>
@@ -494,7 +494,7 @@ background-color: none;</string>
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>310</y>
+         <y>350</y>
          <width>321</width>
          <height>41</height>
         </rect>
@@ -509,7 +509,7 @@ backgroud-color: none;</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>310</y>
+         <y>350</y>
          <width>41</width>
          <height>41</height>
         </rect>
@@ -523,7 +523,7 @@ background-color: none;</string>
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>320</y>
+         <y>360</y>
          <width>251</width>
          <height>21</height>
         </rect>
@@ -545,38 +545,6 @@ padding: 0px</string>
         <string>Celular</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtFundo1_6">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>60</x>
-         <y>360</y>
-         <width>321</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius: 10px;
-border-color: #30426b;
-backgroud-color: none;</string>
-       </property>
-      </widget>
-      <widget class="QWidget" name="widget_9" native="true">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>360</y>
-         <width>41</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-image: url(:/img/cadastro/data.png);
-background-color: none;</string>
-       </property>
-      </widget>
       <widget class="QLineEdit" name="txtFundo2_2">
        <property name="enabled">
         <bool>false</bool>
@@ -584,7 +552,7 @@ background-color: none;</string>
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>460</y>
+         <y>470</y>
          <width>321</width>
          <height>41</height>
         </rect>
@@ -599,7 +567,7 @@ backgroud-color: none;</string>
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>470</y>
+         <y>480</y>
          <width>251</width>
          <height>21</height>
         </rect>
@@ -625,7 +593,7 @@ padding: 0px</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>460</y>
+         <y>470</y>
          <width>41</width>
          <height>41</height>
         </rect>
@@ -634,16 +602,6 @@ padding: 0px</string>
         <string notr="true">border-image: url(:/img/login/senha.png);
 background-color: none;
 margin:5px;</string>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="dataNasc">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>370</y>
-         <width>221</width>
-         <height>22</height>
-        </rect>
        </property>
       </widget>
       <zorder>txtFundo1_4</zorder>
@@ -669,12 +627,9 @@ margin:5px;</string>
       <zorder>txtFundo1_5</zorder>
       <zorder>widget_8</zorder>
       <zorder>txtCelular</zorder>
-      <zorder>txtFundo1_6</zorder>
-      <zorder>widget_9</zorder>
       <zorder>txtFundo2_2</zorder>
       <zorder>txtConfirmSenha</zorder>
       <zorder>widget_10</zorder>
-      <zorder>dataNasc</zorder>
      </widget>
     </item>
    </layout>

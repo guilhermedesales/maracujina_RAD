@@ -30,7 +30,7 @@ class RegistrarWindow(QMainWindow):
         matricula = self.ui.txtMatricula.text().strip()
         curso = self.ui.txtCurso.text().strip()
         celular = self.ui.txtCelular.text().strip()
-        dataNasc = self.ui.txtDtNasc.text().strip()
+        #dataNasc = self.ui.txtDtNasc.text().strip()
         senha = self.ui.txtSenha.text().strip()
         email = self.ui.txtEmail.text().strip()
 
@@ -57,8 +57,8 @@ class RegistrarWindow(QMainWindow):
                 conexao.close()
                 return
             
-            query = "INSERT INTO usuarios (nome, email, matricula, curso, data_nascimento, celular) VALUES (%s, %s,%s, %s, %s)"
-            cursor.execute(query, (nome, email, matricula, curso, dataNasc, celular))
+            query = "INSERT INTO usuarios (nome, email, matricula, curso, celular) VALUES (%s, %s,%s, %s, %s)"
+            cursor.execute(query, (nome, email, matricula, curso, celular))
 
             id_usuario = cursor.lastrowid
 
