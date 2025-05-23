@@ -12,23 +12,137 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(960, 540)
+        MainWindow.setMinimumSize(QtCore.QSize(960, 540))
+        MainWindow.setMaximumSize(QtCore.QSize(1920, 1080))
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(270, 210, 231, 81))
-        font = QtGui.QFont()
-        font.setPointSize(28)
-        self.label.setFont(font)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.frame = QtWidgets.QFrame(parent=self.centralwidget)
+        self.frame.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame.setObjectName("frame")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.frame)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.frame_2 = QtWidgets.QFrame(parent=self.frame)
+        self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_2)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.menuLateral = QtWidgets.QFrame(parent=self.frame_2)
+        self.menuLateral.setMinimumSize(QtCore.QSize(180, 0))
+        self.menuLateral.setMaximumSize(QtCore.QSize(50, 16777215))
+        self.menuLateral.setStyleSheet("background-color: rgb(203, 209, 221);")
+        self.menuLateral.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.menuLateral.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.menuLateral.setObjectName("menuLateral")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.menuLateral)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.frame_5 = QtWidgets.QFrame(parent=self.menuLateral)
+        self.frame_5.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.frame_5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_5.setObjectName("frame_5")
+        self.pushButton = QtWidgets.QPushButton(parent=self.frame_5)
+        self.pushButton.setGeometry(QtCore.QRect(0, 0, 180, 50))
+        self.pushButton.setObjectName("pushButton")
+        self.verticalLayout_2.addWidget(self.frame_5)
+        self.frame_6 = QtWidgets.QFrame(parent=self.menuLateral)
+        self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_6.setObjectName("frame_6")
+        self.btn1 = QtWidgets.QPushButton(parent=self.frame_6)
+        self.btn1.setGeometry(QtCore.QRect(0, 60, 180, 50))
+        self.btn1.setStyleSheet("QPushButton{\n"
+"\n"
+"border:none;\n"
+"background:transparent;\n"
+"padding:10px;\n"
+"text-align:left;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"\n"
+"    background-color: rgb(214, 214, 214);\n"
+"\n"
+"}")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("ui\\../img/icon/task.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btn1.setIcon(icon)
+        self.btn1.setIconSize(QtCore.QSize(30, 30))
+        self.btn1.setObjectName("btn1")
+        self.btn2 = QtWidgets.QPushButton(parent=self.frame_6)
+        self.btn2.setGeometry(QtCore.QRect(0, 130, 180, 50))
+        self.btn2.setStyleSheet("QPushButton{\n"
+"\n"
+"border:none;\n"
+"background:transparent;\n"
+"padding:10px;\n"
+"text-align:left;\n"
+"\n"
+"}")
+        self.btn2.setObjectName("btn2")
+        self.btn3 = QtWidgets.QPushButton(parent=self.frame_6)
+        self.btn3.setGeometry(QtCore.QRect(0, 200, 180, 50))
+        self.btn3.setStyleSheet("QPushButton{\n"
+"\n"
+"border:none;\n"
+"background:transparent;\n"
+"padding:10px;\n"
+"text-align:left;\n"
+"\n"
+"}")
+        self.btn3.setObjectName("btn3")
+        self.verticalLayout_2.addWidget(self.frame_6)
+        self.horizontalLayout_2.addWidget(self.menuLateral)
+        self.frame_4 = QtWidgets.QFrame(parent=self.frame_2)
+        self.frame_4.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_4)
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.paginas = QtWidgets.QStackedWidget(parent=self.frame_4)
+        self.paginas.setObjectName("paginas")
+        self.pg_tarefas = QtWidgets.QWidget()
+        self.pg_tarefas.setObjectName("pg_tarefas")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.pg_tarefas)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.label = QtWidgets.QLabel(parent=self.pg_tarefas)
+        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
+        self.verticalLayout_4.addWidget(self.label)
+        self.paginas.addWidget(self.pg_tarefas)
+        self.page_2 = QtWidgets.QWidget()
+        self.page_2.setObjectName("page_2")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.page_2)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.label_2 = QtWidgets.QLabel(parent=self.page_2)
+        self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_5.addWidget(self.label_2)
+        self.paginas.addWidget(self.page_2)
+        self.verticalLayout_3.addWidget(self.paginas)
+        self.horizontalLayout_2.addWidget(self.frame_4)
+        self.verticalLayout.addWidget(self.frame_2)
+        self.horizontalLayout.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -36,4 +150,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "TELA INICIAL"))
+        self.pushButton.setText(_translate("MainWindow", "PushButton"))
+        self.btn1.setText(_translate("MainWindow", "Tarefas"))
+        self.btn2.setText(_translate("MainWindow", "Botão 2"))
+        self.btn3.setText(_translate("MainWindow", "Botão 3"))
+        self.label.setText(_translate("MainWindow", "task"))
+        self.label_2.setText(_translate("MainWindow", "tela 2"))

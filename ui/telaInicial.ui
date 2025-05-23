@@ -6,44 +6,353 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>960</width>
+    <height>540</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>960</width>
+    <height>540</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>210</y>
-      <width>231</width>
-      <height>81</height>
-     </rect>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>28</pointsize>
-     </font>
+    <property name="leftMargin">
+     <number>0</number>
     </property>
-    <property name="text">
-     <string>TELA INICIAL</string>
+    <property name="topMargin">
+     <number>0</number>
     </property>
-   </widget>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="menuLateral">
+            <property name="minimumSize">
+             <size>
+              <width>180</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(203, 209, 221);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QFrame" name="frame_5">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QPushButton" name="pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>180</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>PushButton</string>
+                </property>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_6">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QPushButton" name="btn1">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>60</y>
+                  <width>180</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+
+border:none;
+background:transparent;
+padding:10px;
+text-align:left;
+
+}
+
+QPushButton:hover{
+
+	background-color: rgb(214, 214, 214);
+
+}</string>
+                </property>
+                <property name="text">
+                 <string>Tarefas</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../img/icon/task.png</normaloff>../img/icon/task.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn2">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>130</y>
+                  <width>180</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+
+border:none;
+background:transparent;
+padding:10px;
+text-align:left;
+
+}</string>
+                </property>
+                <property name="text">
+                 <string>Botão 2</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn3">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>200</y>
+                  <width>180</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+
+border:none;
+background:transparent;
+padding:10px;
+text-align:left;
+
+}</string>
+                </property>
+                <property name="text">
+                 <string>Botão 3</string>
+                </property>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_4">
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QStackedWidget" name="paginas">
+               <widget class="QWidget" name="pg_tarefas">
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>task</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="page_2">
+                <layout class="QVBoxLayout" name="verticalLayout_5">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_2">
+                   <property name="text">
+                    <string>tela 2</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
