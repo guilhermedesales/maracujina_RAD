@@ -300,25 +300,24 @@ padding:10px;
 text-align:left;
 
 }
-
-QPushButton:hover{
-
-	background-color: rgb(214, 214, 214);
-
-}</string>
+</string>
                 </property>
                 <property name="text">
                  <string>   Tarefas</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
-                  <normaloff>:/icon/img/icon/task.png</normaloff>:/icon/img/icon/task.png</iconset>
+                  <normaloff>:/icon/img/icon/task.png</normaloff>
+                  <activeon>:/iconActive/img/icon/iconActive/task2.png</activeon>:/icon/img/icon/task.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
                   <width>30</width>
                   <height>30</height>
                  </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
                 </property>
                </widget>
                <widget class="QPushButton" name="btnMatriz">
@@ -351,24 +350,24 @@ text-align:left;
 
 }
 
-QPushButton:hover{
-
-	background-color: rgb(214, 214, 214);
-
-}</string>
+</string>
                 </property>
                 <property name="text">
                  <string>   Matriz de Eisenhower</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
-                  <normaloff>:/icon/img/icon/matrix.png</normaloff>:/icon/img/icon/matrix.png</iconset>
+                  <normaloff>:/icon/img/icon/matrix.png</normaloff>
+                  <activeon>:/iconActive/img/icon/iconActive/matrix2.png</activeon>:/icon/img/icon/matrix.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
                   <width>30</width>
                   <height>30</height>
                  </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
                 </property>
                </widget>
                <widget class="QPushButton" name="btnPomodoro">
@@ -401,24 +400,24 @@ text-align:left;
 
 }
 
-QPushButton:hover{
-
-	background-color: rgb(214, 214, 214);
-
-}</string>
+</string>
                 </property>
                 <property name="text">
                  <string>   Pomodoro</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
-                  <normaloff>:/icon/img/icon/pomodoro-technique.png</normaloff>:/icon/img/icon/pomodoro-technique.png</iconset>
+                  <normaloff>:/icon/img/icon/pomodoro-technique.png</normaloff>
+                  <activeon>:/iconActive/img/icon/iconActive/pomodoro2.png</activeon>:/icon/img/icon/pomodoro-technique.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
                   <width>30</width>
                   <height>30</height>
                  </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
                 </property>
                </widget>
                <widget class="QPushButton" name="btnCalendario">
@@ -451,24 +450,24 @@ text-align:left;
 
 }
 
-QPushButton:hover{
-
-	background-color: rgb(214, 214, 214);
-
-}</string>
+</string>
                 </property>
                 <property name="text">
                  <string>   Calendário</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
-                  <normaloff>:/icon/img/icon/calendar-silhouette.png</normaloff>:/icon/img/icon/calendar-silhouette.png</iconset>
+                  <normaloff>:/icon/img/icon/calendar-silhouette.png</normaloff>
+                  <activeon>:/iconActive/img/icon/iconActive/calendar-silhouette2.png</activeon>:/icon/img/icon/calendar-silhouette.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
                   <width>30</width>
                   <height>30</height>
                  </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
                 </property>
                </widget>
                <widget class="QPushButton" name="btnDesempenho">
@@ -501,24 +500,24 @@ text-align:left;
 
 }
 
-QPushButton:hover{
-
-	background-color: rgb(214, 214, 214);
-
-}</string>
+</string>
                 </property>
                 <property name="text">
                  <string>   Desempenho</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
-                  <normaloff>:/icon/img/icon/line-chart.png</normaloff>:/icon/img/icon/line-chart.png</iconset>
+                  <normaloff>:/icon/img/icon/line-chart.png</normaloff>
+                  <activeon>:/iconActive/img/icon/iconActive/line-chart2.png</activeon>:/icon/img/icon/line-chart.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
                   <width>30</width>
                   <height>30</height>
                  </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
                 </property>
                </widget>
               </widget>

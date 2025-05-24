@@ -9,11 +9,18 @@
     <file>img/login/senha.png</file>
     <file>img/logo.png</file>
   </qresource>
+  <qresource prefix="iconActive">
+    <file>img/icon/iconActive/calendar-silhouette2.png</file>
+    <file>img/icon/iconActive/line-chart2.png</file>
+    <file>img/icon/iconActive/matrix2.png</file>
+    <file>img/icon/iconActive/pomodoro2.png</file>
+    <file>img/icon/iconActive/task2.png</file>
+  </qresource>
   <qresource prefix="icon">
-    <file>img/icon/task.png</file>
     <file>img/icon/calendar-silhouette.png</file>
     <file>img/icon/line-chart.png</file>
     <file>img/icon/matrix.png</file>
     <file>img/icon/pomodoro-technique.png</file>
+    <file>img/icon/task.png</file>
   </qresource>
 </RCC>

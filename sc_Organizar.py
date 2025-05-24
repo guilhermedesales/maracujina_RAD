@@ -11,28 +11,36 @@ class ScOrganizarWindow(QMainWindow):
         self.ui.setupUi(self)
         self.id_usuario = id_usuario
         
-        self.ui.lblNome.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents) #tira o foco do label
+        self.ui.lblNome.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents) #tira o foco da label
         self.ui.lblCurso.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
         
         self.ui.btnPerfil.clicked.connect(self.telaPerfil)
         
         self.carregar_dados_usuario()
+        
+        self.botoes_menu = {
+            self.ui.btnTarefas: self.ui.pgTarefas,
+            self.ui.btnPomodoro: self.ui.pgPomodoro,
+            self.ui.btnMatriz: self.ui.pgMatriz,
+            self.ui.btnCalendario: self.ui.pgCalendario,
+            self.ui.btnDesempenho: self.ui.pgDesempenho
+        }
+        
+        for botao, pagina in self.botoes_menu.items():
+            botao.clicked.connect(lambda checked, p=pagina, b=botao: self.trocar_pagina(p, b))
 
-        #try:
-        self.ui.btnTarefas.clicked.connect(
-            lambda: self.ui.paginas.setCurrentWidget(self.ui.pgTarefas))
-        self.ui.btnPomodoro.clicked.connect(
-            lambda: self.ui.paginas.setCurrentWidget(self.ui.pgPomodoro))
-        self.ui.btnMatriz.clicked.connect(
-            lambda: self.ui.paginas.setCurrentWidget(self.ui.pgMatriz))
-        self.ui.btnCalendario.clicked.connect(
-            lambda: self.ui.paginas.setCurrentWidget(self.ui.pgCalendario))
-        self.ui.btnDesempenho.clicked.connect(
-            lambda: self.ui.paginas.setCurrentWidget(self.ui.pgDesempenho))
+        # Deixa um botão já ativo ao abrir
+        self.trocar_pagina(self.ui.pgTarefas, self.ui.btnTarefas)
         
         self.ui.btnMenuLargo.clicked.connect(self.expandir_menu)
         
-                    
+        
+    def trocar_pagina(self, pagina, botao_ativo):
+        self.ui.paginas.setCurrentWidget(pagina)
+
+        for botao in self.botoes_menu.keys():
+            botao.setChecked(botao == botao_ativo)
+           
     def telaPerfil(self):
         self.perfil_window = PerfilWindow()
         self.perfil_window.show()

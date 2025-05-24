@@ -132,16 +132,13 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "\n"
 "}\n"
-"\n"
-"QPushButton:hover{\n"
-"\n"
-"    background-color: rgb(214, 214, 214);\n"
-"\n"
-"}")
+"")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icon/img/icon/task.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/iconActive/img/icon/iconActive/task2.png"), QtGui.QIcon.Mode.Active, QtGui.QIcon.State.On)
         self.btnTarefas.setIcon(icon1)
         self.btnTarefas.setIconSize(QtCore.QSize(30, 30))
+        self.btnTarefas.setCheckable(True)
         self.btnTarefas.setObjectName("btnTarefas")
         self.btnMatriz = QtWidgets.QPushButton(parent=self.frame_6)
         self.btnMatriz.setGeometry(QtCore.QRect(0, 120, 200, 50))
@@ -161,15 +158,13 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"\n"
-"    background-color: rgb(214, 214, 214);\n"
-"\n"
-"}")
+"")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/icon/img/icon/matrix.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/iconActive/img/icon/iconActive/matrix2.png"), QtGui.QIcon.Mode.Active, QtGui.QIcon.State.On)
         self.btnMatriz.setIcon(icon2)
         self.btnMatriz.setIconSize(QtCore.QSize(30, 30))
+        self.btnMatriz.setCheckable(True)
         self.btnMatriz.setObjectName("btnMatriz")
         self.btnPomodoro = QtWidgets.QPushButton(parent=self.frame_6)
         self.btnPomodoro.setGeometry(QtCore.QRect(0, 70, 200, 50))
@@ -189,15 +184,13 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"\n"
-"    background-color: rgb(214, 214, 214);\n"
-"\n"
-"}")
+"")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/icon/img/icon/pomodoro-technique.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap(":/iconActive/img/icon/iconActive/pomodoro2.png"), QtGui.QIcon.Mode.Active, QtGui.QIcon.State.On)
         self.btnPomodoro.setIcon(icon3)
         self.btnPomodoro.setIconSize(QtCore.QSize(30, 30))
+        self.btnPomodoro.setCheckable(True)
         self.btnPomodoro.setObjectName("btnPomodoro")
         self.btnCalendario = QtWidgets.QPushButton(parent=self.frame_6)
         self.btnCalendario.setGeometry(QtCore.QRect(0, 170, 200, 50))
@@ -217,15 +210,13 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"\n"
-"    background-color: rgb(214, 214, 214);\n"
-"\n"
-"}")
+"")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(":/icon/img/icon/calendar-silhouette.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap(":/iconActive/img/icon/iconActive/calendar-silhouette2.png"), QtGui.QIcon.Mode.Active, QtGui.QIcon.State.On)
         self.btnCalendario.setIcon(icon4)
         self.btnCalendario.setIconSize(QtCore.QSize(30, 30))
+        self.btnCalendario.setCheckable(True)
         self.btnCalendario.setObjectName("btnCalendario")
         self.btnDesempenho = QtWidgets.QPushButton(parent=self.frame_6)
         self.btnDesempenho.setGeometry(QtCore.QRect(0, 220, 200, 50))
@@ -245,15 +236,13 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"\n"
-"    background-color: rgb(214, 214, 214);\n"
-"\n"
-"}")
+"")
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap(":/icon/img/icon/line-chart.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap(":/iconActive/img/icon/iconActive/line-chart2.png"), QtGui.QIcon.Mode.Active, QtGui.QIcon.State.On)
         self.btnDesempenho.setIcon(icon5)
         self.btnDesempenho.setIconSize(QtCore.QSize(30, 30))
+        self.btnDesempenho.setCheckable(True)
         self.btnDesempenho.setObjectName("btnDesempenho")
         self.verticalLayout_2.addWidget(self.frame_6)
         self.horizontalLayout_2.addWidget(self.menuLateral)
