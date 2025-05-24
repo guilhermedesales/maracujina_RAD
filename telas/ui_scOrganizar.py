@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.menuLateral = QtWidgets.QFrame(parent=self.frame_2)
-        self.menuLateral.setMinimumSize(QtCore.QSize(200, 0))
+        self.menuLateral.setMinimumSize(QtCore.QSize(50, 0))
         self.menuLateral.setMaximumSize(QtCore.QSize(50, 16777215))
         self.menuLateral.setStyleSheet("background-color: rgb(203, 209, 221);")
         self.menuLateral.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
@@ -80,17 +80,21 @@ class Ui_MainWindow(object):
         self.lblCurso.setGeometry(QtCore.QRect(50, 20, 141, 21))
         self.lblCurso.setAutoFillBackground(False)
         self.lblCurso.setStyleSheet("background:transparent;\n"
-"\n"
+"font: 8pt \"Helvetica Light\";\n"
 "")
         self.lblCurso.setObjectName("lblCurso")
         self.lblNome = QtWidgets.QLabel(parent=self.frame_5)
         self.lblNome.setGeometry(QtCore.QRect(50, 10, 141, 16))
         font = QtGui.QFont()
-        font.setPointSize(9)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setFamily("Helvetica Rounded")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
         self.lblNome.setFont(font)
-        self.lblNome.setStyleSheet("background: transparent;")
+        self.lblNome.setStyleSheet("background: transparent;\n"
+"font: 75 10pt \"Helvetica Rounded\";\n"
+"color: black;")
         self.lblNome.setObjectName("lblNome")
         self.btnPerfil = QtWidgets.QPushButton(parent=self.frame_5)
         self.btnPerfil.setGeometry(QtCore.QRect(50, 40, 61, 16))
@@ -325,7 +329,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.paginas.setCurrentIndex(2)
+        self.paginas.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

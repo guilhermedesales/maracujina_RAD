@@ -94,7 +94,7 @@
            <widget class="QFrame" name="menuLateral">
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>50</width>
               <height>0</height>
              </size>
             </property>
@@ -199,7 +199,7 @@ QPushButton:hover{
                 </property>
                 <property name="styleSheet">
                  <string notr="true">background:transparent;
-
+font: 8pt &quot;Helvetica Light&quot;;
 </string>
                 </property>
                 <property name="text">
@@ -217,13 +217,17 @@ QPushButton:hover{
                 </property>
                 <property name="font">
                  <font>
-                  <pointsize>9</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
+                  <family>Helvetica Rounded</family>
+                  <pointsize>10</pointsize>
+                  <weight>9</weight>
+                  <italic>false</italic>
+                  <bold>false</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background: transparent;</string>
+                 <string notr="true">background: transparent;
+font: 75 10pt &quot;Helvetica Rounded&quot;;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Nome do Usuario</string>
@@ -549,7 +553,7 @@ QPushButton:hover{
              <item>
               <widget class="QStackedWidget" name="paginas">
                <property name="currentIndex">
-                <number>2</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="pgTarefas">
                 <layout class="QVBoxLayout" name="verticalLayout_4">

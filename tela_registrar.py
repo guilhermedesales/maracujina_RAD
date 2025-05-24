@@ -69,7 +69,7 @@ class RegistrarWindow(QMainWindow):
 
             if cursor.rowcount > 0:
                 print("Usuário registrado com sucesso.")
-                self.telaInicial()
+                self.telaLogin()
 
 
             QMessageBox.information(self, "Sucesso", "Usuário registrado com sucesso!")

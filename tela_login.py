@@ -22,8 +22,8 @@ class LoginWindow(QMainWindow):
         self.close()
 
     # função abrir tela Inicial
-    def telaInicial(self):
-        self.inicial_window = ScOrganizarWindow()
+    def telaInicial(self, id_usuario):
+        self.inicial_window = ScOrganizarWindow(id_usuario)
         self.inicial_window.show()
         self.close()
 
@@ -43,7 +43,7 @@ class LoginWindow(QMainWindow):
         cursor = conexao.cursor()
 
         query = """
-                SELECT A.senha_hash 
+                SELECT U.id_usuario, A.senha_hash 
                 FROM autenticacoes A 
                 JOIN usuarios U ON A.id_usuario = U.id_usuario
                 WHERE U.matricula = %s 
@@ -54,11 +54,12 @@ class LoginWindow(QMainWindow):
             resultado = cursor.fetchone()
 
             if resultado:
-                    senha_hash_banco = resultado[0]  # senha_hash armazenada no banco
+                    id_usuario = resultado[0]       # id do usuario (0 pq é o primeiro campo)
+                    senha_hash_banco = resultado[1] # senha_hash armazenada no banco (1 pq é o segundo campo)
 
                     if verificar_senha(senha, senha_hash_banco):
                         print("Login realizado com sucesso.")
-                        self.telaInicial()
+                        self.telaInicial(id_usuario)
                     else:
                         print("Senha incorreta.")
                         mensagem = "Login ou senha incorretos."
