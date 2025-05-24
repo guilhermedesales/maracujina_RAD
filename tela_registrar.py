@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from telas.ui_telaRegistrar import Ui_MainWindow
-from tela_inicial import TelaInicial
+from sc_Organizar import ScOrganizarWindow
 from seguranca.senhaHash import gerar_hash
 import pymysql
 from PyQt6.QtCore import QDate
@@ -14,13 +14,13 @@ class RegistrarWindow(QMainWindow):
         self.ui.btnLogin.clicked.connect(self.telaLogin)
 
     def telaInicial(self): # abre a tela inicial
-        self.inicial_window = TelaInicial()
+        self.inicial_window = ScOrganizarWindow()
         self.inicial_window.show()
         self.close()
 
     def telaLogin(self):
-        from tela_login import TelaLogin
-        self.inicial_window = TelaLogin()
+        from tela_login import LoginWindow
+        self.inicial_window = LoginWindow()
         self.inicial_window.show()
         self.close()
 

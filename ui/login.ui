@@ -10,6 +10,12 @@
     <height>648</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1152</width>
+    <height>648</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Login</string>
   </property>
@@ -46,7 +52,7 @@ padding: 10px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/logo.png);
-background-color:none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtFundo2">
@@ -64,7 +70,7 @@ background-color:none;</string>
        <property name="styleSheet">
         <string notr="true">border-color: #30426b;
 border-radius: 10px;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="btnConfirm">
@@ -148,7 +154,7 @@ padding: 0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/login/user.png);
-background-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtLogin">
@@ -166,8 +172,8 @@ background-color: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
+        <string notr="true">background:transparent;
+border: none;
 padding: 0px</string>
        </property>
        <property name="text">
@@ -192,7 +198,7 @@ padding: 0px</string>
        <property name="styleSheet">
         <string notr="true">border-radius: 10px;
 border-color: #30426b;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtSenha">
@@ -210,8 +216,8 @@ backgroud-color: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
+        <string notr="true">background:transparent;
+border: none;
 padding: 0px</string>
        </property>
        <property name="echoMode">
@@ -232,7 +238,7 @@ padding: 0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/login/senha.png);
-background-color: none;
+background:transparent;
 margin:5px;</string>
        </property>
       </widget>
@@ -287,9 +293,9 @@ padding: 0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color:#30426b;
-background-color: none;
+background:transparent;
 padding: 0px;
-border-color:white;
+border:none;
 font: 9pt &quot;helvetica&quot;;
 font-weight:bold;
 </string>
@@ -301,7 +307,7 @@ font-weight:bold;
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>70</x>
          <y>230</y>
          <width>251</width>
          <height>31</height>
@@ -317,8 +323,8 @@ font-weight:bold;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(48, 66, 107);
-border-color: rgb(48, 66, 107);
+        <string notr="true">background:transparent;
+border:none;
 color:white;
 padding: 0px;
 font: 16pt &quot;helvetica&quot;;</string>
@@ -330,7 +336,7 @@ font: 16pt &quot;helvetica&quot;;</string>
       <widget class="QLabel" name="label_4">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>130</x>
          <y>260</y>
          <width>111</width>
          <height>31</height>
@@ -346,9 +352,9 @@ font: 16pt &quot;helvetica&quot;;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color:rgb(48, 66, 107);
+        <string notr="true">background:transparent;
 color:white;
-border-color: rgb(48, 66, 107);
+border: none;
 font: 19pt &quot;helvetica&quot;;
 font-weight:bold;
 padding:0px</string>
@@ -385,7 +391,7 @@ padding:0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color:rgb(226, 17, 63);
-backgroud-color:none;
+background:transparent;
 border-color:white;
 font: 19pt &quot;helvetica&quot;;
 padding:0px</string>

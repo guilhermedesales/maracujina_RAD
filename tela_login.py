@@ -1,12 +1,12 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from telas.ui_telaLogin import Ui_MainWindow
 from tela_registrar import RegistrarWindow
-from tela_inicial import TelaInicial
+from sc_Organizar import ScOrganizarWindow
 from seguranca.senhaHash import verificar_senha
 import pymysql
 #import traceback
 
-class TelaLogin(QMainWindow):
+class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
@@ -23,7 +23,7 @@ class TelaLogin(QMainWindow):
 
     # função abrir tela Inicial
     def telaInicial(self):
-        self.inicial_window = TelaInicial()
+        self.inicial_window = ScOrganizarWindow()
         self.inicial_window.show()
         self.close()
 

@@ -13,6 +13,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1152, 648)
+        MainWindow.setMinimumSize(QtCore.QSize(1152, 648))
         MainWindow.setStyleSheet("background-color: rgb(239, 239, 239);")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -28,14 +29,14 @@ class Ui_MainWindow(object):
         self.widget_2 = QtWidgets.QWidget(parent=self.frame)
         self.widget_2.setGeometry(QtCore.QRect(80, 30, 201, 191))
         self.widget_2.setStyleSheet("border-image: url(:/img/logo.png);\n"
-"background-color:none;")
+"background:transparent;")
         self.widget_2.setObjectName("widget_2")
         self.txtFundo2 = QtWidgets.QLineEdit(parent=self.frame)
         self.txtFundo2.setEnabled(False)
         self.txtFundo2.setGeometry(QtCore.QRect(410, 180, 321, 41))
         self.txtFundo2.setStyleSheet("border-color: #30426b;\n"
 "border-radius: 10px;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo2.setObjectName("txtFundo2")
         self.btnConfirm = QtWidgets.QPushButton(parent=self.frame)
         self.btnConfirm.setGeometry(QtCore.QRect(450, 280, 261, 51))
@@ -76,15 +77,15 @@ class Ui_MainWindow(object):
         self.widget_3 = QtWidgets.QWidget(parent=self.frame)
         self.widget_3.setGeometry(QtCore.QRect(420, 110, 41, 41))
         self.widget_3.setStyleSheet("border-image: url(:/img/login/user.png);\n"
-"background-color: none;")
+"background:transparent;")
         self.widget_3.setObjectName("widget_3")
         self.txtLogin = QtWidgets.QLineEdit(parent=self.frame)
         self.txtLogin.setGeometry(QtCore.QRect(470, 120, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtLogin.setFont(font)
-        self.txtLogin.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
+        self.txtLogin.setStyleSheet("background:transparent;\n"
+"border: none;\n"
 "padding: 0px")
         self.txtLogin.setText("")
         self.txtLogin.setObjectName("txtLogin")
@@ -93,22 +94,22 @@ class Ui_MainWindow(object):
         self.txtFundo1.setGeometry(QtCore.QRect(410, 110, 321, 41))
         self.txtFundo1.setStyleSheet("border-radius: 10px;\n"
 "border-color: #30426b;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo1.setObjectName("txtFundo1")
         self.txtSenha = QtWidgets.QLineEdit(parent=self.frame)
         self.txtSenha.setGeometry(QtCore.QRect(470, 190, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtSenha.setFont(font)
-        self.txtSenha.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
+        self.txtSenha.setStyleSheet("background:transparent;\n"
+"border: none;\n"
 "padding: 0px")
         self.txtSenha.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.txtSenha.setObjectName("txtSenha")
         self.widget_4 = QtWidgets.QWidget(parent=self.frame)
         self.widget_4.setGeometry(QtCore.QRect(420, 180, 41, 41))
         self.widget_4.setStyleSheet("border-image: url(:/img/login/senha.png);\n"
-"background-color: none;\n"
+"background:transparent;\n"
 "margin:5px;")
         self.widget_4.setObjectName("widget_4")
         self.label_2 = QtWidgets.QLabel(parent=self.frame)
@@ -132,15 +133,15 @@ class Ui_MainWindow(object):
         self.btnRegistrar.setGeometry(QtCore.QRect(540, 340, 61, 23))
         self.btnRegistrar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnRegistrar.setStyleSheet("color:#30426b;\n"
-"background-color: none;\n"
+"background:transparent;\n"
 "padding: 0px;\n"
-"border-color:white;\n"
+"border:none;\n"
 "font: 9pt \"helvetica\";\n"
 "font-weight:bold;\n"
 "")
         self.btnRegistrar.setObjectName("btnRegistrar")
         self.label_3 = QtWidgets.QLabel(parent=self.frame)
-        self.label_3.setGeometry(QtCore.QRect(60, 230, 251, 31))
+        self.label_3.setGeometry(QtCore.QRect(70, 230, 251, 31))
         font = QtGui.QFont()
         font.setFamily("helvetica")
         font.setPointSize(16)
@@ -148,14 +149,14 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.label_3.setFont(font)
-        self.label_3.setStyleSheet("background-color: rgb(48, 66, 107);\n"
-"border-color: rgb(48, 66, 107);\n"
+        self.label_3.setStyleSheet("background:transparent;\n"
+"border:none;\n"
 "color:white;\n"
 "padding: 0px;\n"
 "font: 16pt \"helvetica\";")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(parent=self.frame)
-        self.label_4.setGeometry(QtCore.QRect(120, 260, 111, 31))
+        self.label_4.setGeometry(QtCore.QRect(130, 260, 111, 31))
         font = QtGui.QFont()
         font.setFamily("helvetica")
         font.setPointSize(19)
@@ -163,9 +164,9 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(75)
         self.label_4.setFont(font)
-        self.label_4.setStyleSheet("background-color:rgb(48, 66, 107);\n"
+        self.label_4.setStyleSheet("background:transparent;\n"
 "color:white;\n"
-"border-color: rgb(48, 66, 107);\n"
+"border: none;\n"
 "font: 19pt \"helvetica\";\n"
 "font-weight:bold;\n"
 "padding:0px")
@@ -179,7 +180,7 @@ class Ui_MainWindow(object):
         self.lblErro = QtWidgets.QLabel(parent=self.frame)
         self.lblErro.setGeometry(QtCore.QRect(400, 40, 331, 41))
         self.lblErro.setStyleSheet("color:rgb(226, 17, 63);\n"
-"backgroud-color:none;\n"
+"background:transparent;\n"
 "border-color:white;\n"
 "font: 19pt \"helvetica\";\n"
 "padding:0px")

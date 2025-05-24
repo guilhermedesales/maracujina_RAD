@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.txtFundo2.setGeometry(QtCore.QRect(60, 410, 321, 41))
         self.txtFundo2.setStyleSheet("border-color: #30426b;\n"
 "border-radius: 10px;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo2.setObjectName("txtFundo2")
         self.btnRegister = QtWidgets.QPushButton(parent=self.frame)
         self.btnRegister.setGeometry(QtCore.QRect(90, 540, 271, 51))
@@ -56,16 +56,17 @@ class Ui_MainWindow(object):
         self.widget_3 = QtWidgets.QWidget(parent=self.frame)
         self.widget_3.setGeometry(QtCore.QRect(70, 110, 41, 41))
         self.widget_3.setStyleSheet("border-image: url(:/img/login/user.png);\n"
-"background-color: none;")
+"background:transparent;\n"
+"margin: 4px;")
         self.widget_3.setObjectName("widget_3")
         self.txtNome = QtWidgets.QLineEdit(parent=self.frame)
         self.txtNome.setGeometry(QtCore.QRect(120, 120, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtNome.setFont(font)
-        self.txtNome.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
-"padding: 0px")
+        self.txtNome.setStyleSheet("background:transparent;\n"
+"border: none;\n"
+"padding: 0px;")
         self.txtNome.setText("")
         self.txtNome.setObjectName("txtNome")
         self.txtFundo1 = QtWidgets.QLineEdit(parent=self.frame)
@@ -73,22 +74,22 @@ class Ui_MainWindow(object):
         self.txtFundo1.setGeometry(QtCore.QRect(60, 110, 321, 41))
         self.txtFundo1.setStyleSheet("border-radius: 10px;\n"
 "border-color: #30426b;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo1.setObjectName("txtFundo1")
         self.txtSenha = QtWidgets.QLineEdit(parent=self.frame)
         self.txtSenha.setGeometry(QtCore.QRect(120, 420, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtSenha.setFont(font)
-        self.txtSenha.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
-"padding: 0px")
+        self.txtSenha.setStyleSheet("background:transparent;\n"
+"border: none;\n"
+"padding: 0px;")
         self.txtSenha.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.txtSenha.setObjectName("txtSenha")
         self.widget_4 = QtWidgets.QWidget(parent=self.frame)
         self.widget_4.setGeometry(QtCore.QRect(70, 410, 41, 41))
         self.widget_4.setStyleSheet("border-image: url(:/img/login/senha.png);\n"
-"background-color: none;\n"
+"background:transparent;\n"
 "margin:5px;")
         self.widget_4.setObjectName("widget_4")
         self.label_2 = QtWidgets.QLabel(parent=self.frame)
@@ -112,7 +113,7 @@ class Ui_MainWindow(object):
         self.btnLogin.setGeometry(QtCore.QRect(190, 600, 41, 23))
         self.btnLogin.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnLogin.setStyleSheet("color:#30426b;\n"
-"background: none;\n"
+"background:transparent;\n"
 "padding: 0px;\n"
 "border-color:white;\n"
 "font: 9pt \"helvetica\";\n"
@@ -132,7 +133,7 @@ class Ui_MainWindow(object):
 "padding: 0px;\n"
 "font: 16pt \"helvetica\";\n"
 "border:none;\n"
-"background:none;")
+"background:transparent;")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(parent=self.frame)
         self.label_4.setGeometry(QtCore.QRect(120, 50, 211, 41))
@@ -148,60 +149,62 @@ class Ui_MainWindow(object):
 "font-weight:bold;\n"
 "padding:0px;\n"
 "border:none;\n"
-"background:none;")
+"background:transparent;")
         self.label_4.setObjectName("label_4")
         self.txtEmail = QtWidgets.QLineEdit(parent=self.frame)
         self.txtEmail.setGeometry(QtCore.QRect(120, 180, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtEmail.setFont(font)
-        self.txtEmail.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
-"padding: 0px")
+        self.txtEmail.setStyleSheet("background:transparent;\n"
+"border: none;\n"
+"padding: 0px;")
         self.txtEmail.setText("")
         self.txtEmail.setObjectName("txtEmail")
         self.widget_5 = QtWidgets.QWidget(parent=self.frame)
         self.widget_5.setGeometry(QtCore.QRect(70, 170, 41, 41))
         self.widget_5.setStyleSheet("border-image: url(:/img/cadastro/email.png);\n"
-"background-color: none;")
+"background:transparent;\n"
+"margin: 5px;")
         self.widget_5.setObjectName("widget_5")
         self.txtFundo1_2 = QtWidgets.QLineEdit(parent=self.frame)
         self.txtFundo1_2.setEnabled(False)
         self.txtFundo1_2.setGeometry(QtCore.QRect(60, 170, 321, 41))
         self.txtFundo1_2.setStyleSheet("border-radius: 10px;\n"
 "border-color: #30426b;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo1_2.setObjectName("txtFundo1_2")
         self.txtMatricula = QtWidgets.QLineEdit(parent=self.frame)
         self.txtMatricula.setGeometry(QtCore.QRect(120, 240, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtMatricula.setFont(font)
-        self.txtMatricula.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
-"padding: 0px")
+        self.txtMatricula.setStyleSheet("background:transparent;\n"
+"border: none;\n"
+"padding: 0px;")
         self.txtMatricula.setText("")
         self.txtMatricula.setObjectName("txtMatricula")
         self.widget_6 = QtWidgets.QWidget(parent=self.frame)
         self.widget_6.setGeometry(QtCore.QRect(70, 230, 41, 41))
         self.widget_6.setStyleSheet("border-image: url(:/img/cadastro/matricula.png);\n"
-"background-color: none;")
+"background:transparent;\n"
+"margin: 5px;")
         self.widget_6.setObjectName("widget_6")
         self.txtFundo1_3 = QtWidgets.QLineEdit(parent=self.frame)
         self.txtFundo1_3.setEnabled(False)
         self.txtFundo1_3.setGeometry(QtCore.QRect(60, 230, 321, 41))
         self.txtFundo1_3.setStyleSheet("border-radius: 10px;\n"
 "border-color: #30426b;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo1_3.setObjectName("txtFundo1_3")
         self.txtCurso = QtWidgets.QLineEdit(parent=self.frame)
         self.txtCurso.setGeometry(QtCore.QRect(120, 300, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtCurso.setFont(font)
-        self.txtCurso.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
-"padding: 0px")
+        self.txtCurso.setStyleSheet("background:transparent;\n"
+"border: none;\n"
+"padding: 0px;")
         self.txtCurso.setText("")
         self.txtCurso.setObjectName("txtCurso")
         self.txtFundo1_4 = QtWidgets.QLineEdit(parent=self.frame)
@@ -209,33 +212,34 @@ class Ui_MainWindow(object):
         self.txtFundo1_4.setGeometry(QtCore.QRect(60, 290, 321, 41))
         self.txtFundo1_4.setStyleSheet("border-radius: 10px;\n"
 "border-color: #30426b;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo1_4.setObjectName("txtFundo1_4")
         self.widget_7 = QtWidgets.QWidget(parent=self.frame)
         self.widget_7.setGeometry(QtCore.QRect(70, 290, 41, 41))
         self.widget_7.setStyleSheet("border-image: url(:/img/cadastro/curso.png);\n"
-"background-color: none;")
+"background:transparent;")
         self.widget_7.setObjectName("widget_7")
         self.txtFundo1_5 = QtWidgets.QLineEdit(parent=self.frame)
         self.txtFundo1_5.setEnabled(False)
         self.txtFundo1_5.setGeometry(QtCore.QRect(60, 350, 321, 41))
         self.txtFundo1_5.setStyleSheet("border-radius: 10px;\n"
 "border-color: #30426b;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo1_5.setObjectName("txtFundo1_5")
         self.widget_8 = QtWidgets.QWidget(parent=self.frame)
         self.widget_8.setGeometry(QtCore.QRect(70, 350, 41, 41))
         self.widget_8.setStyleSheet("border-image: url(:/img/cadastro/celular.png);\n"
-"background-color: none;")
+"background:transparent;\n"
+"margin: 5px;")
         self.widget_8.setObjectName("widget_8")
         self.txtCelular = QtWidgets.QLineEdit(parent=self.frame)
         self.txtCelular.setGeometry(QtCore.QRect(120, 360, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtCelular.setFont(font)
-        self.txtCelular.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
-"padding: 0px")
+        self.txtCelular.setStyleSheet("background:transparent;\n"
+"border: none;\n"
+"padding: 0px;")
         self.txtCelular.setText("")
         self.txtCelular.setObjectName("txtCelular")
         self.txtFundo2_2 = QtWidgets.QLineEdit(parent=self.frame)
@@ -243,22 +247,22 @@ class Ui_MainWindow(object):
         self.txtFundo2_2.setGeometry(QtCore.QRect(60, 470, 321, 41))
         self.txtFundo2_2.setStyleSheet("border-color: #30426b;\n"
 "border-radius: 10px;\n"
-"backgroud-color: none;")
+"background:transparent;")
         self.txtFundo2_2.setObjectName("txtFundo2_2")
         self.txtConfirmSenha = QtWidgets.QLineEdit(parent=self.frame)
         self.txtConfirmSenha.setGeometry(QtCore.QRect(120, 480, 251, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.txtConfirmSenha.setFont(font)
-        self.txtConfirmSenha.setStyleSheet("backgroud-color: none;\n"
-"border-color: none;\n"
-"padding: 0px")
+        self.txtConfirmSenha.setStyleSheet("background:transparent;\n"
+"border: none;\n"
+"padding: 0px;")
         self.txtConfirmSenha.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.txtConfirmSenha.setObjectName("txtConfirmSenha")
         self.widget_10 = QtWidgets.QWidget(parent=self.frame)
         self.widget_10.setGeometry(QtCore.QRect(70, 470, 41, 41))
         self.widget_10.setStyleSheet("border-image: url(:/img/login/senha.png);\n"
-"background-color: none;\n"
+"background:transparent;\n"
 "margin:5px;")
         self.widget_10.setObjectName("widget_10")
         self.txtFundo1_4.raise_()

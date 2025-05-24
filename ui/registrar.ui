@@ -56,7 +56,7 @@ padding: 10px;</string>
        <property name="styleSheet">
         <string notr="true">border-color: #30426b;
 border-radius: 10px;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="btnRegister">
@@ -104,7 +104,8 @@ QPushButton:hover {
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/login/user.png);
-background-color: none;</string>
+background:transparent;
+margin: 4px;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtNome">
@@ -122,9 +123,9 @@ background-color: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
-padding: 0px</string>
+        <string notr="true">background:transparent;
+border: none;
+padding: 0px;</string>
        </property>
        <property name="text">
         <string/>
@@ -148,7 +149,7 @@ padding: 0px</string>
        <property name="styleSheet">
         <string notr="true">border-radius: 10px;
 border-color: #30426b;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtSenha">
@@ -166,9 +167,9 @@ backgroud-color: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
-padding: 0px</string>
+        <string notr="true">background:transparent;
+border: none;
+padding: 0px;</string>
        </property>
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
@@ -188,7 +189,7 @@ padding: 0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/login/senha.png);
-background-color: none;
+background:transparent;
 margin:5px;</string>
        </property>
       </widget>
@@ -243,7 +244,7 @@ padding: 0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color:#30426b;
-background: none;
+background:transparent;
 padding: 0px;
 border-color:white;
 font: 9pt &quot;helvetica&quot;;
@@ -277,7 +278,7 @@ font-weight:bold;
 padding: 0px;
 font: 16pt &quot;helvetica&quot;;
 border:none;
-background:none;</string>
+background:transparent;</string>
        </property>
        <property name="text">
         <string>Crie sua conta e</string>
@@ -307,7 +308,7 @@ font: 22pt &quot;helvetica&quot;;
 font-weight:bold;
 padding:0px;
 border:none;
-background:none;</string>
+background:transparent;</string>
        </property>
        <property name="text">
         <string>Comece agora</string>
@@ -328,9 +329,9 @@ background:none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
-padding: 0px</string>
+        <string notr="true">background:transparent;
+border: none;
+padding: 0px;</string>
        </property>
        <property name="text">
         <string/>
@@ -350,7 +351,8 @@ padding: 0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/cadastro/email.png);
-background-color: none;</string>
+background:transparent;
+margin: 5px;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtFundo1_2">
@@ -368,7 +370,7 @@ background-color: none;</string>
        <property name="styleSheet">
         <string notr="true">border-radius: 10px;
 border-color: #30426b;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtMatricula">
@@ -386,9 +388,9 @@ backgroud-color: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
-padding: 0px</string>
+        <string notr="true">background:transparent;
+border: none;
+padding: 0px;</string>
        </property>
        <property name="text">
         <string/>
@@ -408,7 +410,8 @@ padding: 0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/cadastro/matricula.png);
-background-color: none;</string>
+background:transparent;
+margin: 5px;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtFundo1_3">
@@ -426,7 +429,7 @@ background-color: none;</string>
        <property name="styleSheet">
         <string notr="true">border-radius: 10px;
 border-color: #30426b;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtCurso">
@@ -444,9 +447,9 @@ backgroud-color: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
-padding: 0px</string>
+        <string notr="true">background:transparent;
+border: none;
+padding: 0px;</string>
        </property>
        <property name="text">
         <string/>
@@ -470,7 +473,7 @@ padding: 0px</string>
        <property name="styleSheet">
         <string notr="true">border-radius: 10px;
 border-color: #30426b;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QWidget" name="widget_7" native="true">
@@ -484,7 +487,7 @@ backgroud-color: none;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/cadastro/curso.png);
-background-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtFundo1_5">
@@ -502,7 +505,7 @@ background-color: none;</string>
        <property name="styleSheet">
         <string notr="true">border-radius: 10px;
 border-color: #30426b;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QWidget" name="widget_8" native="true">
@@ -516,7 +519,8 @@ backgroud-color: none;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/cadastro/celular.png);
-background-color: none;</string>
+background:transparent;
+margin: 5px;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtCelular">
@@ -534,9 +538,9 @@ background-color: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
-padding: 0px</string>
+        <string notr="true">background:transparent;
+border: none;
+padding: 0px;</string>
        </property>
        <property name="text">
         <string/>
@@ -560,7 +564,7 @@ padding: 0px</string>
        <property name="styleSheet">
         <string notr="true">border-color: #30426b;
 border-radius: 10px;
-backgroud-color: none;</string>
+background:transparent;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="txtConfirmSenha">
@@ -578,9 +582,9 @@ backgroud-color: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">backgroud-color: none;
-border-color: none;
-padding: 0px</string>
+        <string notr="true">background:transparent;
+border: none;
+padding: 0px;</string>
        </property>
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
@@ -600,7 +604,7 @@ padding: 0px</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/img/login/senha.png);
-background-color: none;
+background:transparent;
 margin:5px;</string>
        </property>
       </widget>
