@@ -15,6 +15,8 @@ class Ui_MainWindow(object):
         MainWindow.resize(960, 540)
         MainWindow.setMinimumSize(QtCore.QSize(960, 540))
         MainWindow.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        MainWindow.setStyleSheet("\n"
+"background-color: rgb(249, 250, 255);")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -121,7 +123,8 @@ class Ui_MainWindow(object):
         font.setFamily("Helvetica")
         font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(9)
         self.btnTarefas.setFont(font)
         self.btnTarefas.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnTarefas.setStyleSheet("QPushButton{\n"
@@ -130,8 +133,12 @@ class Ui_MainWindow(object):
 "background:transparent;\n"
 "padding:10px;\n"
 "text-align:left;\n"
+"font: 75 10pt \"Helvetica\";\n"
+"\n"
 "\n"
 "}\n"
+"\n"
+"\n"
 "")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icon/img/icon/task.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -146,7 +153,8 @@ class Ui_MainWindow(object):
         font.setFamily("Helvetica")
         font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(9)
         self.btnMatriz.setFont(font)
         self.btnMatriz.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnMatriz.setStyleSheet("QPushButton{\n"
@@ -155,6 +163,8 @@ class Ui_MainWindow(object):
 "background:transparent;\n"
 "padding:10px;\n"
 "text-align:left;\n"
+"font: 75 10pt \"Helvetica\";\n"
+"\n"
 "\n"
 "}\n"
 "\n"
@@ -172,7 +182,8 @@ class Ui_MainWindow(object):
         font.setFamily("Helvetica")
         font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(9)
         self.btnPomodoro.setFont(font)
         self.btnPomodoro.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnPomodoro.setStyleSheet("QPushButton{\n"
@@ -181,6 +192,8 @@ class Ui_MainWindow(object):
 "background:transparent;\n"
 "padding:10px;\n"
 "text-align:left;\n"
+"font: 75 10pt \"Helvetica\";\n"
+"\n"
 "\n"
 "}\n"
 "\n"
@@ -198,7 +211,8 @@ class Ui_MainWindow(object):
         font.setFamily("Helvetica")
         font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(9)
         self.btnCalendario.setFont(font)
         self.btnCalendario.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnCalendario.setStyleSheet("QPushButton{\n"
@@ -207,6 +221,8 @@ class Ui_MainWindow(object):
 "background:transparent;\n"
 "padding:10px;\n"
 "text-align:left;\n"
+"font: 75 10pt \"Helvetica\";\n"
+"\n"
 "\n"
 "}\n"
 "\n"
@@ -224,7 +240,8 @@ class Ui_MainWindow(object):
         font.setFamily("Helvetica")
         font.setPointSize(10)
         font.setBold(False)
-        font.setWeight(50)
+        font.setItalic(False)
+        font.setWeight(9)
         self.btnDesempenho.setFont(font)
         self.btnDesempenho.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnDesempenho.setStyleSheet("QPushButton{\n"
@@ -233,9 +250,10 @@ class Ui_MainWindow(object):
 "background:transparent;\n"
 "padding:10px;\n"
 "text-align:left;\n"
+"font: 75 10pt \"Helvetica\";\n"
+"\n"
 "\n"
 "}\n"
-"\n"
 "")
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap(":/icon/img/icon/line-chart.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -262,10 +280,93 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.label = QtWidgets.QLabel(parent=self.pgTarefas)
-        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.frame_3 = QtWidgets.QFrame(parent=self.pgTarefas)
+        self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_3)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.frame_7 = QtWidgets.QFrame(parent=self.frame_3)
+        self.frame_7.setMinimumSize(QtCore.QSize(200, 0))
+        self.frame_7.setMaximumSize(QtCore.QSize(200, 16777215))
+        self.frame_7.setStyleSheet("border-right: 1px solid rgb(186, 186, 186);")
+        self.frame_7.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.frame_7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_7.setObjectName("frame_7")
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_7)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.frame_9 = QtWidgets.QFrame(parent=self.frame_7)
+        self.frame_9.setMinimumSize(QtCore.QSize(0, 200))
+        self.frame_9.setMaximumSize(QtCore.QSize(16777215, 200))
+        self.frame_9.setStyleSheet("")
+        self.frame_9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_9.setObjectName("frame_9")
+        self.label = QtWidgets.QLabel(parent=self.frame_9)
+        self.label.setGeometry(QtCore.QRect(20, 20, 111, 31))
+        self.label.setStyleSheet("font: 14pt \"Helvetica\";\n"
+"border: none;")
         self.label.setObjectName("label")
-        self.verticalLayout_4.addWidget(self.label)
+        self.label_6 = QtWidgets.QLabel(parent=self.frame_9)
+        self.label_6.setGeometry(QtCore.QRect(20, 60, 111, 31))
+        self.label_6.setStyleSheet("font: 14pt \"Helvetica\";\n"
+"border: none;")
+        self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(parent=self.frame_9)
+        self.label_7.setGeometry(QtCore.QRect(20, 100, 111, 31))
+        self.label_7.setStyleSheet("font: 14pt \"Helvetica\";\n"
+"border: none;")
+        self.label_7.setObjectName("label_7")
+        self.btnCriarLista = QtWidgets.QPushButton(parent=self.frame_9)
+        self.btnCriarLista.setGeometry(QtCore.QRect(170, 180, 21, 16))
+        self.btnCriarLista.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btnCriarLista.setStyleSheet("background: transparent;\n"
+"border:none;\n"
+"font: 75 15pt \"Helvetica\";\n"
+"color: rgb(153, 153, 153)")
+        self.btnCriarLista.setObjectName("btnCriarLista")
+        self.label_8 = QtWidgets.QLabel(parent=self.frame_9)
+        self.label_8.setGeometry(QtCore.QRect(10, 171, 151, 31))
+        self.label_8.setStyleSheet("font: 75 10pt \"Helvetica\";\n"
+"color: rgb(153, 153, 153);\n"
+"border: none;")
+        self.label_8.setObjectName("label_8")
+        self.line = QtWidgets.QFrame(parent=self.frame_9)
+        self.line.setGeometry(QtCore.QRect(17, 146, 161, 20))
+        self.line.setStyleSheet("border-right: 0;\n"
+"")
+        self.line.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.line.setObjectName("line")
+        self.verticalLayout_9.addWidget(self.frame_9)
+        self.layoutListasTarefas = QtWidgets.QWidget(parent=self.frame_7)
+        self.layoutListasTarefas.setObjectName("layoutListasTarefas")
+        self.formLayout = QtWidgets.QFormLayout(self.layoutListasTarefas)
+        self.formLayout.setContentsMargins(0, 0, 0, 9)
+        self.formLayout.setSpacing(0)
+        self.formLayout.setObjectName("formLayout")
+        self.formLayout_2 = QtWidgets.QFormLayout()
+        self.formLayout_2.setContentsMargins(-1, -1, -1, 0)
+        self.formLayout_2.setObjectName("formLayout_2")
+        self.formLayout.setLayout(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.formLayout_2)
+        self.verticalLayout_9.addWidget(self.layoutListasTarefas)
+        self.horizontalLayout_3.addWidget(self.frame_7)
+        self.containerTarefas = QtWidgets.QFrame(parent=self.frame_3)
+        self.containerTarefas.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.containerTarefas.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.containerTarefas.setObjectName("containerTarefas")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.containerTarefas)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setVerticalSpacing(0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.horizontalLayout_4.addLayout(self.gridLayout)
+        self.horizontalLayout_3.addWidget(self.containerTarefas)
+        self.verticalLayout_4.addWidget(self.frame_3)
         self.paginas.addWidget(self.pgTarefas)
         self.pgPomodoro = QtWidgets.QWidget()
         self.pgPomodoro.setObjectName("pgPomodoro")
@@ -332,7 +433,11 @@ class Ui_MainWindow(object):
         self.btnPomodoro.setText(_translate("MainWindow", "   Pomodoro"))
         self.btnCalendario.setText(_translate("MainWindow", "   Calendário"))
         self.btnDesempenho.setText(_translate("MainWindow", "   Desempenho"))
-        self.label.setText(_translate("MainWindow", "task"))
+        self.label.setText(_translate("MainWindow", "Hoje"))
+        self.label_6.setText(_translate("MainWindow", "Semana"))
+        self.label_7.setText(_translate("MainWindow", "Todas"))
+        self.btnCriarLista.setText(_translate("MainWindow", "+"))
+        self.label_8.setText(_translate("MainWindow", "Lista de Tarefas"))
         self.label_2.setText(_translate("MainWindow", "Pomodoro"))
         self.label_3.setText(_translate("MainWindow", "Matriz de Eisenhower"))
         self.label_4.setText(_translate("MainWindow", "Calendário"))

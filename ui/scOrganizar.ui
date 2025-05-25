@@ -288,7 +288,8 @@ QPushButton:hover{
                  <font>
                   <family>Helvetica</family>
                   <pointsize>10</pointsize>
-                  <weight>50</weight>
+                  <weight>9</weight>
+                  <italic>false</italic>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -302,8 +303,12 @@ border:none;
 background:transparent;
 padding:10px;
 text-align:left;
+font: 75 10pt &quot;Helvetica&quot;;
+
 
 }
+
+
 </string>
                 </property>
                 <property name="text">
@@ -337,7 +342,8 @@ text-align:left;
                  <font>
                   <family>Helvetica</family>
                   <pointsize>10</pointsize>
-                  <weight>50</weight>
+                  <weight>9</weight>
+                  <italic>false</italic>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -351,6 +357,8 @@ border:none;
 background:transparent;
 padding:10px;
 text-align:left;
+font: 75 10pt &quot;Helvetica&quot;;
+
 
 }
 
@@ -387,7 +395,8 @@ text-align:left;
                  <font>
                   <family>Helvetica</family>
                   <pointsize>10</pointsize>
-                  <weight>50</weight>
+                  <weight>9</weight>
+                  <italic>false</italic>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -401,6 +410,8 @@ border:none;
 background:transparent;
 padding:10px;
 text-align:left;
+font: 75 10pt &quot;Helvetica&quot;;
+
 
 }
 
@@ -437,7 +448,8 @@ text-align:left;
                  <font>
                   <family>Helvetica</family>
                   <pointsize>10</pointsize>
-                  <weight>50</weight>
+                  <weight>9</weight>
+                  <italic>false</italic>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -451,6 +463,8 @@ border:none;
 background:transparent;
 padding:10px;
 text-align:left;
+font: 75 10pt &quot;Helvetica&quot;;
+
 
 }
 
@@ -487,7 +501,8 @@ text-align:left;
                  <font>
                   <family>Helvetica</family>
                   <pointsize>10</pointsize>
-                  <weight>50</weight>
+                  <weight>9</weight>
+                  <italic>false</italic>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -501,9 +516,10 @@ border:none;
 background:transparent;
 padding:10px;
 text-align:left;
+font: 75 10pt &quot;Helvetica&quot;;
+
 
 }
-
 </string>
                 </property>
                 <property name="text">
@@ -613,6 +629,9 @@ text-align:left;
                         <height>16777215</height>
                        </size>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">border-right: 1px solid rgb(186, 186, 186);</string>
+                      </property>
                       <property name="frameShape">
                        <enum>QFrame::NoFrame</enum>
                       </property>
@@ -640,14 +659,17 @@ text-align:left;
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
-                           <height>150</height>
+                           <height>200</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
                            <width>16777215</width>
-                           <height>150</height>
+                           <height>200</height>
                           </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
                          </property>
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
@@ -665,7 +687,8 @@ text-align:left;
                            </rect>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font: 14pt &quot;Helvetica&quot;;</string>
+                           <string notr="true">font: 14pt &quot;Helvetica&quot;;
+border: none;</string>
                           </property>
                           <property name="text">
                            <string>Hoje</string>
@@ -681,7 +704,8 @@ text-align:left;
                            </rect>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font: 14pt &quot;Helvetica&quot;;</string>
+                           <string notr="true">font: 14pt &quot;Helvetica&quot;;
+border: none;</string>
                           </property>
                           <property name="text">
                            <string>Semana</string>
@@ -697,52 +721,123 @@ text-align:left;
                            </rect>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font: 14pt &quot;Helvetica&quot;;</string>
+                           <string notr="true">font: 14pt &quot;Helvetica&quot;;
+border: none;</string>
                           </property>
                           <property name="text">
                            <string>Todas</string>
                           </property>
                          </widget>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QFrame" name="frame_8">
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
+                         <widget class="QPushButton" name="btnCriarLista">
+                          <property name="geometry">
+                           <rect>
+                            <x>170</x>
+                            <y>180</y>
+                            <width>21</width>
+                            <height>16</height>
+                           </rect>
+                          </property>
+                          <property name="cursor">
+                           <cursorShape>PointingHandCursor</cursorShape>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background: transparent;
+border:none;
+font: 75 15pt &quot;Helvetica&quot;;
+color: rgb(153, 153, 153)</string>
+                          </property>
+                          <property name="text">
+                           <string>+</string>
+                          </property>
+                         </widget>
                          <widget class="QLabel" name="label_8">
                           <property name="geometry">
                            <rect>
                             <x>10</x>
-                            <y>10</y>
-                            <width>171</width>
+                            <y>171</y>
+                            <width>151</width>
                             <height>31</height>
                            </rect>
                           </property>
                           <property name="styleSheet">
                            <string notr="true">font: 75 10pt &quot;Helvetica&quot;;
-color: rgb(153, 153, 153)</string>
+color: rgb(153, 153, 153);
+border: none;</string>
                           </property>
                           <property name="text">
                            <string>Lista de Tarefas</string>
                           </property>
                          </widget>
+                         <widget class="Line" name="line">
+                          <property name="geometry">
+                           <rect>
+                            <x>17</x>
+                            <y>146</y>
+                            <width>161</width>
+                            <height>20</height>
+                           </rect>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">border-right: 0;
+</string>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QWidget" name="layoutListasTarefas" native="true">
+                         <layout class="QFormLayout" name="formLayout">
+                          <property name="horizontalSpacing">
+                           <number>0</number>
+                          </property>
+                          <property name="verticalSpacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>9</number>
+                          </property>
+                          <item row="0" column="0">
+                           <layout class="QFormLayout" name="formLayout_2">
+                            <property name="bottomMargin">
+                             <number>0</number>
+                            </property>
+                           </layout>
+                          </item>
+                         </layout>
                         </widget>
                        </item>
                       </layout>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="frame_4">
+                     <widget class="QFrame" name="containerTarefas">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_4">
+                       <item>
+                        <layout class="QGridLayout" name="gridLayout">
+                         <property name="verticalSpacing">
+                          <number>0</number>
+                         </property>
+                        </layout>
+                       </item>
+                      </layout>
                      </widget>
                     </item>
                    </layout>
