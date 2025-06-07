@@ -36,7 +36,7 @@ class RegistrarWindow(QMainWindow):
 
         senha_hash = gerar_hash(senha)
 
-        if not email or not senha:
+        if not email or not senha or not nome or not matricula or not curso or not celular:
                 QMessageBox.warning(self, "Campos vazios", "Preencha todos os campos.")
                 return
         try:
@@ -53,6 +53,13 @@ class RegistrarWindow(QMainWindow):
             cursor.execute("SELECT * FROM usuarios WHERE email = %s", (email,))
             if cursor.fetchone():
                 QMessageBox.warning(self, "Email já cadastrado", "Esse email já está cadastrado.")
+                cursor.close()
+                conexao.close()
+                return
+            
+            cursor.execute("SELECT * FROM usuarios WHERE matricula = %s", (matricula,))
+            if cursor.fetchone():
+                QMessageBox.warning(self, "Matricula já cadastrada", "Essa matricula já está cadastrada.")
                 cursor.close()
                 conexao.close()
                 return
