@@ -91,6 +91,8 @@ class ScOrganizarWindow(QMainWindow):
             else:
                 print("Usuário não encontrado.")
                 QMessageBox.critical(self, "Erro", "Usuário não encontrado.")
+                self.ui.lblNome.setText("Aluno")
+                self.ui.lblCurso.setText("Curso")
 
             cursor.close()
             conexao.close()
