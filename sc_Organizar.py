@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt6.QtCore import QPropertyAnimation, QEasingCurve, Qt
 from tela_perfil import PerfilWindow
 from telas.ui_scOrganizar import Ui_MainWindow
-from funcionalidadesOrganizar.tarefas import TarefasWidget  # <- Importa a nova classe
+from funcionalidadesOrganizar.tarefas import TarefasWidget  # importa a classe de tarefas
 import pymysql
 
 class ScOrganizarWindow(QMainWindow):
@@ -33,7 +33,7 @@ class ScOrganizarWindow(QMainWindow):
 
         self.trocar_pagina(self.ui.pgTarefas, self.ui.btnTarefas)
 
-        # Cria o gerenciador de tarefas (classe separada)
+        # Cria o gerenciador de tarefas
         self.tarefas_widget = TarefasWidget(self.ui)
 
     def telaPerfil(self):

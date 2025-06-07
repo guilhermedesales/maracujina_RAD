@@ -74,7 +74,7 @@ class LoginWindow(QMainWindow):
 
         except Exception as e:
             print("Erro ao conectar:")
-            mensagem = "Erro ao conectar ao banco de dados."
+            mensagem = "Falha ao conectar ao banco."
             self.ui.lblErro.setText(mensagem)
 
     # função verificar usuario no banco de dados
@@ -92,5 +92,4 @@ class LoginWindow(QMainWindow):
                 return
 
             self.validar_usuario(matricula, senha)
-
-        
+            
