@@ -1,9 +1,7 @@
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from telas.ui_telaRegistrar import Ui_MainWindow
 from sc_Organizar import ScOrganizarWindow
-from seguranca.senhaHash import gerar_hash
 import pymysql
-from PyQt6.QtCore import QDate
 
 class RegistrarWindow(QMainWindow):
     def __init__(self):
@@ -13,7 +11,7 @@ class RegistrarWindow(QMainWindow):
         self.ui.btnRegister.clicked.connect(self.registrar_usuario)
         self.ui.btnLogin.clicked.connect(self.telaLogin)
 
-    def telaInicial(self): # abre a tela inicial
+    def telaInicial(self):
         self.inicial_window = ScOrganizarWindow()
         self.inicial_window.show()
         self.close()
@@ -25,23 +23,19 @@ class RegistrarWindow(QMainWindow):
         self.close()
 
     def registrar_usuario(self):
-
         nome = self.ui.txtNome.text().strip()
         matricula = self.ui.txtMatricula.text().strip()
         curso = self.ui.txtCurso.text().strip()
         celular = self.ui.txtCelular.text().strip()
-        #dataNasc = self.ui.txtDtNasc.text().strip()
         senha = self.ui.txtSenha.text().strip()
         email = self.ui.txtEmail.text().strip()
 
-        senha_hash = gerar_hash(senha)
-
         if not email or not senha or not nome or not matricula or not curso or not celular:
-                QMessageBox.warning(self, "Campos vazios", "Preencha todos os campos.")
-                return
+            QMessageBox.warning(self, "Campos vazios", "Preencha todos os campos.")
+            return
+
         try:
             conexao = pymysql.connect(
-                 
                 host='localhost',
                 user='root',
                 password='root',
@@ -56,28 +50,27 @@ class RegistrarWindow(QMainWindow):
                 cursor.close()
                 conexao.close()
                 return
-            
+
             cursor.execute("SELECT * FROM usuarios WHERE matricula = %s", (matricula,))
             if cursor.fetchone():
                 QMessageBox.warning(self, "Matricula já cadastrada", "Essa matricula já está cadastrada.")
                 cursor.close()
                 conexao.close()
                 return
-            
-            query = "INSERT INTO usuarios (nome, email, matricula, curso, celular) VALUES (%s, %s,%s, %s, %s)"
+
+            query = "INSERT INTO usuarios (nome, email, matricula, curso, celular) VALUES (%s, %s, %s, %s, %s)"
             cursor.execute(query, (nome, email, matricula, curso, celular))
 
             id_usuario = cursor.lastrowid
 
-            query = "INSERT INTO autenticacoes (id_usuario, senha_hash) VALUES (%s, %s)"
-            cursor.execute(query, (id_usuario, senha_hash))
+            query = "INSERT INTO autenticacoes (id_usuario, senha) VALUES (%s, %s)"
+            cursor.execute(query, (id_usuario, senha))
 
             conexao.commit()
 
             if cursor.rowcount > 0:
                 print("Usuário registrado com sucesso.")
                 self.telaLogin()
-
 
             QMessageBox.information(self, "Sucesso", "Usuário registrado com sucesso!")
 

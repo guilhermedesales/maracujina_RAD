@@ -10,7 +10,6 @@ class Tarefas:
         self.ui.btnDeleteTask.clicked.connect(self.remover_tarefa)
         self.ui.btnCleanTaskList.clicked.connect(self.limpar_lista)
 
-        self.criar_tabela()
         self.carregar_do_bd()
 
     def conectar_banco(self):
@@ -22,24 +21,6 @@ class Tarefas:
             connect_timeout=5
         )
 
-    def criar_tabela(self):
-        try:
-            conn = self.conectar_banco()
-            cursor = conn.cursor()
-            cursor.execute("""
-                CREATE TABLE IF NOT EXISTS tarefas (
-                    id_tarefa INT AUTO_INCREMENT PRIMARY KEY,
-                    id_usuario INT NOT NULL,
-                    nome_tarefa VARCHAR(255) NOT NULL,
-                    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
-                );
-            """)
-            conn.commit()
-            cursor.close()
-            conn.close()
-        except Exception as e:
-            print(f"Erro ao criar tabela de tarefas: {e}")
-            QMessageBox.critical(None, "Erro", "Erro ao criar tabela de tarefas.")
 
     def adicionar_tarefa(self):
         task = self.ui.txtTask.text().strip()

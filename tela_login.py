@@ -2,9 +2,7 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from telas.ui_telaLogin import Ui_MainWindow
 from tela_registrar import RegistrarWindow
 from sc_Organizar import ScOrganizarWindow
-from seguranca.senhaHash import verificar_senha
 import pymysql
-#import traceback
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -15,81 +13,68 @@ class LoginWindow(QMainWindow):
         self.ui.btnConfirm.clicked.connect(self.verifica_login)
         self.ui.btnRegistrar.clicked.connect(self.telaRegistrar)
 
-    # função abrir tela Registrar
     def telaRegistrar(self):
         self.registrar_window = RegistrarWindow()
         self.registrar_window.show()
         self.close()
 
-    # função abrir tela Inicial
     def telaInicial(self, id_usuario):
         self.inicial_window = ScOrganizarWindow(id_usuario)
         self.inicial_window.show()
         self.close()
 
-    # função conectar ao banco de dados
     def conectar_banco(self):
         return pymysql.connect(
-                host='localhost',
-                user='root',
-                password='root',
-                database='db_maracujina',
-                connect_timeout=5
-            )
-    
-    # função pra validar o usuario
+            host='localhost',
+            user='root',
+            password='root',
+            database='db_maracujina',
+            connect_timeout=5
+        )
+
     def validar_usuario(self, matricula, senha):
         conexao = self.conectar_banco()
         cursor = conexao.cursor()
 
         query = """
-                SELECT U.id_usuario, A.senha_hash 
-                FROM autenticacoes A 
-                JOIN usuarios U ON A.id_usuario = U.id_usuario
-                WHERE U.matricula = %s 
-         
-            """
+            SELECT U.id_usuario, A.senha 
+            FROM autenticacoes A 
+            JOIN usuarios U ON A.id_usuario = U.id_usuario
+            WHERE U.matricula = %s
+        """
         try:
-            cursor.execute(query, (matricula,)) 
+            cursor.execute(query, (matricula,))
             resultado = cursor.fetchone()
 
             if resultado:
-                    id_usuario = resultado[0]       # id do usuario (0 pq é o primeiro campo)
-                    senha_hash_banco = resultado[1] # senha_hash armazenada no banco (1 pq é o segundo campo)
+                id_usuario = resultado[0]
+                senha_banco = resultado[1]
 
-                    if verificar_senha(senha, senha_hash_banco):
-                        print("Login realizado com sucesso.")
-                        self.telaInicial(id_usuario)
-                    else:
-                        print("Senha incorreta.")
-                        mensagem = "Login ou senha incorretos."
-                        self.ui.lblErro.setText(mensagem)
+                if senha == senha_banco:
+                    print("Login realizado com sucesso.")
+                    self.telaInicial(id_usuario)
+                else:
+                    print("Senha incorreta.")
+                    self.ui.lblErro.setText("Login ou senha incorretos.")
             else:
-                    print("Usuário não encontrado.")
-                    mensagem = "Login ou senha incorretos."
-                    self.ui.lblErro.setText(mensagem)
+                print("Usuário não encontrado.")
+                self.ui.lblErro.setText("Login ou senha incorretos.")
 
             cursor.close()
             conexao.close()
 
         except Exception as e:
             print("Erro ao conectar:")
-            mensagem = "Falha ao conectar ao banco."
-            self.ui.lblErro.setText(mensagem)
+            self.ui.lblErro.setText("Falha ao conectar ao banco.")
 
-    # função verificar usuario no banco de dados
     def verifica_login(self):
-        
-            print("Botão clicado para verificar login")
+        print("Botão clicado para verificar login")
 
-            matricula = self.ui.txtLogin.text().strip() # pega o texto do campo de login
-            senha = self.ui.txtSenha.text().strip() # pega o texto do campo de senha
-            mensagem = self.ui.lblErro.text() # pega o texto do label de erro
+        matricula = self.ui.txtLogin.text().strip()
+        senha = self.ui.txtSenha.text().strip()
 
-            if not matricula or not senha: # verifica se os campos estão vazios
-                mensagem = "Preencha todos os campos"
-                self.ui.lblErro.setText(mensagem)
-                return
+        if not matricula or not senha:
+            self.ui.lblErro.setText("Preencha todos os campos")
+            return
 
-            self.validar_usuario(matricula, senha)
-            
+        self.validar_usuario(matricula, senha)

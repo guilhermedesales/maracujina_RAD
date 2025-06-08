@@ -29,6 +29,9 @@ create table if not exists tarefas (
     foreign key (id_usuario) references usuarios(id_usuario)
 );
 
+ALTER TABLE autenticacoes CHANGE senha_hash senha VARCHAR(255);
+ALTER TABLE autenticacoes MODIFY senha VARCHAR(255) NOT NULL;
+
 SELECT * from usuarios;
 select * from autenticacoes;
 
