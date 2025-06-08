@@ -1,5 +1,6 @@
 import pymysql
 from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtGui import QKeySequence, QShortcut
 
 class Tarefas:
     def __init__(self, ui, id_usuario):
@@ -12,6 +13,10 @@ class Tarefas:
 
         self.carregar_do_bd()
 
+        # Atalhos de teclado
+        QShortcut(QKeySequence("E"), self.ui.taskList, self.remover_tarefa)
+        self.ui.txtTask.returnPressed.connect(self.adicionar_tarefa)
+        
     def conectar_banco(self):
         return pymysql.connect(
             host='localhost',
@@ -21,7 +26,7 @@ class Tarefas:
             connect_timeout=5
         )
 
-
+    # add tarefa ao bd e a lista de tarefas
     def adicionar_tarefa(self):
         task = self.ui.txtTask.text().strip()
         if not task:
