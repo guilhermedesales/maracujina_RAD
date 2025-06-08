@@ -301,7 +301,15 @@ class Ui_MainWindow(object):
         self.widget_5.setObjectName("widget_5")
         self.label = QtWidgets.QLabel(parent=self.widget_5)
         self.label.setGeometry(QtCore.QRect(80, 20, 151, 31))
-        self.label.setStyleSheet("font: 75 30pt \"Helvetica\";")
+        self.label.setStyleSheet("QLabel {\n"
+"    color: #2e2e2e;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 28pt;\n"
+"    font-weight: bold;\n"
+"    qproperty-alignment: AlignCenter;\n"
+"\n"
+"}\n"
+"")
         self.label.setObjectName("label")
         self.horizontalLayout_3.addWidget(self.widget_5)
         self.widget_6 = QtWidgets.QWidget(parent=self.widget_2)
@@ -320,53 +328,93 @@ class Ui_MainWindow(object):
         self.widget_7.setObjectName("widget_7")
         self.label_6 = QtWidgets.QLabel(parent=self.widget_7)
         self.label_6.setGeometry(QtCore.QRect(10, 40, 151, 16))
-        self.label_6.setStyleSheet("font: 14pt \"Helvetica\";")
+        self.label_6.setStyleSheet("QLabel {\n"
+"    color: #444;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 11pt;\n"
+"    font-weight: 500;\n"
+"    padding-left: 4px;\n"
+"}\n"
+"")
         self.label_6.setObjectName("label_6")
         self.txtTask = QtWidgets.QLineEdit(parent=self.widget_7)
-        self.txtTask.setGeometry(QtCore.QRect(10, 60, 271, 31))
-        self.txtTask.setStyleSheet("")
+        self.txtTask.setGeometry(QtCore.QRect(10, 60, 271, 41))
+        self.txtTask.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 2px solid rgb(200, 200, 200);\n"
+"    border-radius: 15px;\n"
+"    padding: 6px 12px;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 12pt;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid rgb(134, 225, 140);\n"
+"    background-color: rgb(250, 250, 250);\n"
+"}\n"
+"")
         self.txtTask.setText("")
         self.txtTask.setObjectName("txtTask")
         self.btnAddTask = QtWidgets.QPushButton(parent=self.widget_7)
-        self.btnAddTask.setGeometry(QtCore.QRect(30, 140, 241, 41))
+        self.btnAddTask.setGeometry(QtCore.QRect(30, 160, 241, 51))
         self.btnAddTask.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btnAddTask.setStyleSheet("QPushButton{\n"
-"\n"
+        self.btnAddTask.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(134, 225, 140);\n"
 "    color: white;\n"
-"    font: 75 16pt \"Helvetica\";\n"
-"    border-radius:20px;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 16pt;\n"
+"    font-weight: bold;\n"
+"    border-radius: 20px;\n"
+"    padding: 8px 16px;\n"
+"    border: none;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"\n"
+"QPushButton:hover {\n"
 "    background-color: rgb(111, 212, 104);\n"
-"    \n"
-"\n"
-"}")
+"}\n"
+"")
         self.btnAddTask.setObjectName("btnAddTask")
         self.btnDeleteTask = QtWidgets.QPushButton(parent=self.widget_7)
-        self.btnDeleteTask.setGeometry(QtCore.QRect(30, 190, 241, 41))
+        self.btnDeleteTask.setGeometry(QtCore.QRect(30, 220, 241, 51))
         self.btnDeleteTask.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btnDeleteTask.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(234, 119, 119);\n"
+        self.btnDeleteTask.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(255, 89, 89);\n"
 "    color: white;\n"
-"    font: 75 16pt \"Helvetica\";\n"
-"    border-radius:20px;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 16pt;\n"
+"    font-weight: bold;\n"
+"    border-radius: 20px;\n"
+"    padding: 8px 16px;\n"
+"    border: none;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"\n"
-"    \n"
-"    background-color: rgb(217, 67, 67);\n"
-"\n"
-"}")
+"QPushButton:hover {\n"
+"    background-color:rgb(225, 67, 67);\n"
+"}\n"
+"")
         self.btnDeleteTask.setObjectName("btnDeleteTask")
         self.btnCleanTaskList = QtWidgets.QPushButton(parent=self.widget_7)
-        self.btnCleanTaskList.setGeometry(QtCore.QRect(60, 280, 171, 41))
-        self.btnCleanTaskList.setStyleSheet("background-color:rgb(199, 199, 199);\n"
-"font: 75 10pt \"Helvetica\";\n"
-"border-radius:20px;")
+        self.btnCleanTaskList.setGeometry(QtCore.QRect(60, 310, 171, 41))
+        self.btnCleanTaskList.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(199, 199, 199);\n"
+"    color: white;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 10pt;\n"
+"    font-weight: bold;\n"
+"    border-radius: 20px;\n"
+"    padding: 6px 14px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(160, 160, 160);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(130, 130, 130);\n"
+"}\n"
+"")
         self.btnCleanTaskList.setObjectName("btnCleanTaskList")
         self.horizontalLayout_4.addWidget(self.widget_7)
         self.widget_8 = QtWidgets.QWidget(parent=self.widget_3)
@@ -377,6 +425,35 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.taskList = QtWidgets.QListWidget(parent=self.widget_8)
         self.taskList.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.taskList.setStyleSheet("QListWidget {\n"
+"    border: none;\n"
+"    border-left: 3px solid rgb(200, 200, 200);\n"
+"    border-top: 3px solid rgb(200, 200, 200);\n"
+"    background-color: rgb(245, 245, 245);\n"
+"    padding: 5px;\n"
+"    border-top-left-radius: 10px;\n"
+"}\n"
+"\n"
+"QListWidget::item {\n"
+"    border: 1px solid rgb(220, 220, 220);\n"
+"    border-radius: 5px;\n"
+"    padding: 8px;\n"
+"    margin: 4px 0;\n"
+"    background-color: white;\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QListWidget::item:hover {\n"
+"    background-color: rgb(235, 235, 235);\n"
+"    border: 1px solid rgb(180, 180, 180);\n"
+"}\n"
+"\n"
+"QListWidget::item:selected {\n"
+"    background-color: rgb(200, 220, 255);\n"
+"    border: 1px solid rgb(100, 150, 200);\n"
+"    color: black;\n"
+"}\n"
+"")
         self.taskList.setTabKeyNavigation(False)
         self.taskList.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectItems)
         self.taskList.setVerticalScrollMode(QtWidgets.QAbstractItemView.ScrollMode.ScrollPerItem)
@@ -458,8 +535,9 @@ class Ui_MainWindow(object):
         self.btnDesempenho.setText(_translate("MainWindow", "   Desempenho"))
         self.label.setText(_translate("MainWindow", "Tarefas"))
         self.label_6.setText(_translate("MainWindow", "Nome da Tarefa:"))
-        self.btnAddTask.setText(_translate("MainWindow", "Adicionar Tarefa"))
-        self.btnDeleteTask.setText(_translate("MainWindow", "Remover Tarefa"))
+        self.txtTask.setPlaceholderText(_translate("MainWindow", "Tarefa"))
+        self.btnAddTask.setText(_translate("MainWindow", "Adicionar Tarefa ➕"))
+        self.btnDeleteTask.setText(_translate("MainWindow", "Remover Tarefa  🗑️"))
         self.btnCleanTaskList.setText(_translate("MainWindow", "Limpar Lista de Tarefas"))
         self.taskList.setSortingEnabled(False)
         self.label_2.setText(_translate("MainWindow", "Pomodoro"))
