@@ -1,137 +1,135 @@
-from PyQt6.QtWidgets import (
-    QWidget, QPushButton, QVBoxLayout, QLineEdit, QLabel,
-    QInputDialog, QHBoxLayout, QMessageBox, QCheckBox, QFrame
-)
-from PyQt6.QtCore import Qt
+import pymysql
+from PyQt6.QtWidgets import QMessageBox
 
-
-class TarefasWidget(QWidget):
-    def __init__(self, ui):
-        super().__init__()
+class Tarefas:
+    def __init__(self, ui, id_usuario):
         self.ui = ui
-        self.dados_listas = {}  # {nome_lista: [(tarefa, completa)]}
-        self.lista_atual = None
+        self.id_usuario = id_usuario
+        
+        self.ui.btnAddTask.clicked.connect(self.adicionar_tarefa)
+        self.ui.btnDeleteTask.clicked.connect(self.remover_tarefa)
+        self.ui.btnCleanTaskList.clicked.connect(self.limpar_lista)
 
-        self.ui.btnCriarLista.clicked.connect(self.criar_lista)
+        self.criar_tabela()
+        self.carregar_do_bd()
 
-    def criar_lista(self):
-        if len(self.dados_listas) >= 5:
-            QMessageBox.warning(self, "Limite", "Máximo de 5 listas.")
-            return
+    def conectar_banco(self):
+        return pymysql.connect(
+            host='localhost',
+            user='root',
+            password='root',
+            database='db_maracujina',
+            connect_timeout=5
+        )
 
-        nome, ok = QInputDialog.getText(self, "Nova Lista", "Nome da lista:")
-        if ok and nome:
-            if nome in self.dados_listas:
-                QMessageBox.warning(self, "Erro", "Lista já existe.")
-                return
-
-            self.dados_listas[nome] = []
-
-            botao_lista = QPushButton(nome)
-            botao_lista.clicked.connect(lambda _, n=nome: self.exibir_tarefas(n))
-            self.ui.layoutListasTarefas.layout().addWidget(botao_lista)
-
-            self.atualizar_contagem()
-
-    def exibir_tarefas(self, nome_lista):
-        self.lista_atual = nome_lista
-
-        # Limpa a área addTask
-        add_layout = self.ui.addTask.layout()
-        if add_layout is None:
-            add_layout = QHBoxLayout()
-            self.ui.addTask.setLayout(add_layout)
-        while add_layout.count():
-            item = add_layout.takeAt(0)
-            widget = item.widget()
-            if widget:
-                widget.setParent(None)
-
-        self.ui.addTask.setFixedWidth(400)
-
-        # Limpa a área Tarefas
-        tarefas_layout = self.ui.Tarefas.layout()
-        tarefas_layout.setSpacing(10)
-        while tarefas_layout.count():
-            item = tarefas_layout.takeAt(0)
-            widget = item.widget()
-            if widget:
-                widget.setParent(None)
-
-        # Input de tarefa
-        input_tarefa = QLineEdit()
-        input_tarefa.setPlaceholderText("Digite uma nova tarefa...")
-        btn_add = QPushButton("Adicionar")
-        btn_add.clicked.connect(lambda: self.adicionar_tarefa(input_tarefa.text()))
-        add_layout.addWidget(input_tarefa)
-        add_layout.addWidget(btn_add)
-
-        # Mostra tarefas
-        for tarefa, completa in self.dados_listas[nome_lista]:
-            tarefa_widget = QFrame()
-            tarefa_widget.setFixedHeight(70)
-            tarefa_widget.setStyleSheet("""
-                QFrame {
-                    background-color: #f0f0f0;
-                    border-radius: 8px;
-                    padding: 8px;
-                }
+    def criar_tabela(self):
+        try:
+            conn = self.conectar_banco()
+            cursor = conn.cursor()
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS tarefas (
+                    id_tarefa INT AUTO_INCREMENT PRIMARY KEY,
+                    id_usuario INT NOT NULL,
+                    nome_tarefa VARCHAR(255) NOT NULL,
+                    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
+                );
             """)
-            layout = QHBoxLayout(tarefa_widget)
+            conn.commit()
+            cursor.close()
+            conn.close()
+        except Exception as e:
+            print(f"Erro ao criar tabela de tarefas: {e}")
+            QMessageBox.critical(None, "Erro", "Erro ao criar tabela de tarefas.")
 
-            checkbox = QCheckBox()
-            checkbox.setChecked(completa)
-            # Passa o nome da tarefa atual para evitar problema com referência em lambda
-            checkbox.stateChanged.connect(lambda _, t=tarefa: self.alternar_status(t))
-
-            label = QLabel(tarefa)
-            label.setStyleSheet("font-size: 14px;")
-            layout.addWidget(checkbox)
-            layout.addWidget(label)
-            layout.addStretch()
-
-            tarefas_layout.addWidget(tarefa_widget)
-
-    def adicionar_tarefa(self, texto):
-        if not texto or self.lista_atual is None:
+    def adicionar_tarefa(self):
+        task = self.ui.txtTask.text().strip()
+        if not task:
+            QMessageBox.warning(None, "Aviso", "Digite uma tarefa antes de adicionar.")
             return
 
-        # Verifica se já existe tarefa com o mesmo nome na lista atual
-        tarefas_atual = [tarefa for tarefa, _ in self.dados_listas[self.lista_atual]]
-        if texto in tarefas_atual:
-            QMessageBox.warning(self, "Erro", "Já existe uma tarefa com esse nome nessa lista.")
+        try:
+            conn = self.conectar_banco()
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT INTO tarefas (id_usuario, nome_tarefa)
+                VALUES (%s, %s)
+            """, (self.id_usuario, task))
+            conn.commit()
+            cursor.close()
+            conn.close()
+
+            self.ui.taskList.addItem(task)
+            self.ui.txtTask.setText("")
+        except Exception as e:
+            print(f"Erro ao salvar tarefa no banco: {e}")
+            QMessageBox.critical(None, "Erro", "Erro ao salvar tarefa no banco.")
+
+    def remover_tarefa(self):
+        row = self.ui.taskList.currentRow()
+        if row == -1:
+            QMessageBox.information(None, "Aviso", "Selecione uma tarefa para remover.")
             return
 
-        if len(self.dados_listas[self.lista_atual]) >= 15:
-            QMessageBox.warning(self, "Limite", "Máximo de 15 tarefas por lista.")
+        tarefa = self.ui.taskList.item(row).text()
+        try:
+            conn = self.conectar_banco()
+            cursor = conn.cursor()
+            cursor.execute("""
+                DELETE FROM tarefas
+                WHERE id_usuario = %s AND nome_tarefa = %s
+                LIMIT 1
+            """, (self.id_usuario, tarefa))
+            conn.commit()
+            cursor.close()
+            conn.close()
+
+            self.ui.taskList.takeItem(row)
+        except Exception as e:
+            print(f"Erro ao remover tarefa do banco: {e}")
+            QMessageBox.critical(None, "Erro", "Erro ao remover tarefa do banco.")
+
+    def limpar_lista(self):
+        if self.ui.taskList.count() == 0:
+            QMessageBox.information(None, "Aviso", "A lista já está vazia.")
             return
 
-        self.dados_listas[self.lista_atual].append((texto, False))
-        self.exibir_tarefas(self.lista_atual)
-        self.atualizar_contagem()
+        resposta = QMessageBox.question(
+            None,
+            "Confirmação",
+            "Tem certeza que deseja apagar todas as tarefas?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
 
-    def alternar_status(self, tarefa):
-        lista = self.dados_listas[self.lista_atual]
-        for i, (t, completa) in enumerate(lista):
-            if t == tarefa:
-                lista[i] = (t, not completa)
-                break
-        self.exibir_tarefas(self.lista_atual)
-        self.atualizar_contagem()
+        if resposta == QMessageBox.StandardButton.Yes:
+            try:
+                conn = self.conectar_banco()
+                cursor = conn.cursor()
+                cursor.execute("""
+                    DELETE FROM tarefas WHERE id_usuario = %s
+                """, (self.id_usuario,))
+                conn.commit()
+                cursor.close()
+                conn.close()
 
-    def contar_tarefas(self):
-        total = completas = pendentes = 0
-        for tarefas in self.dados_listas.values():
-            for _, completa in tarefas:
-                total += 1
-                if completa:
-                    completas += 1
-                else:
-                    pendentes += 1
-        return total, pendentes, completas
+                self.ui.taskList.clear()
+            except Exception as e:
+                print(f"Erro ao limpar tarefas do banco: {e}")
+                QMessageBox.critical(None, "Erro", "Erro ao limpar tarefas do banco.")
 
-    def atualizar_contagem(self):
-        total, pendentes, completas = self.contar_tarefas()
-        self.ui.lblTask.setText(str(total))
-        self.ui.lblTaskPen.setText(str(pendentes))
-        self.ui.lblTaskCom.setText(str(completas))
+    def carregar_do_bd(self):
+        try:
+            conn = self.conectar_banco()
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT nome_tarefa FROM tarefas
+                WHERE id_usuario = %s
+            """, (self.id_usuario,))
+            tarefas = cursor.fetchall()
+            cursor.close()
+            conn.close()
+
+            for tarefa in tarefas:
+                self.ui.taskList.addItem(tarefa[0])
+        except Exception as e:
+            print(f"Erro ao carregar tarefas do banco: {e}")
+            QMessageBox.critical(None, "Erro", "Erro ao carregar tarefas do banco.")
