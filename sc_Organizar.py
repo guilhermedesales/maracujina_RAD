@@ -3,6 +3,8 @@ from PyQt6.QtCore import QPropertyAnimation, QEasingCurve, Qt
 from tela_perfil import PerfilWindow
 from telas.ui_scOrganizar import Ui_MainWindow
 from funcionalidadesOrganizar.tarefas import Tarefas
+from funcionalidadesOrganizar.pomodoro import Pomodoro
+
 import pymysql
 
 class ScOrganizarWindow(QMainWindow):
@@ -14,6 +16,7 @@ class ScOrganizarWindow(QMainWindow):
 
         self.ui.lblNome.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
         self.ui.lblCurso.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
+        
 
         self.ui.btnPerfil.clicked.connect(self.telaPerfil)
         self.ui.btnMenuLargo.clicked.connect(self.expandir_menu)
@@ -62,6 +65,9 @@ class ScOrganizarWindow(QMainWindow):
         self.ui.paginas.setCurrentWidget(pagina)
         for botao in self.botoes_menu.keys():
             botao.setChecked(botao == botao_ativo)
+            
+        if pagina == self.ui.pgPomodoro:
+            self.pomodoro_widget = Pomodoro(self.ui)
 
     def conectar_banco(self):
         return pymysql.connect(

@@ -14,10 +14,12 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(960, 540)
         MainWindow.setMinimumSize(QtCore.QSize(960, 540))
-        MainWindow.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        MainWindow.setMaximumSize(QtCore.QSize(960, 540))
         MainWindow.setStyleSheet("\n"
 "background-color: rgb(249, 250, 255);")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        self.centralwidget.setMinimumSize(QtCore.QSize(960, 540))
+        self.centralwidget.setMaximumSize(QtCore.QSize(960, 16777215))
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -474,10 +476,52 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.label_2 = QtWidgets.QLabel(parent=self.pgPomodoro)
-        self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.widget_9 = QtWidgets.QWidget(parent=self.pgPomodoro)
+        self.widget_9.setObjectName("widget_9")
+        self.widget_10 = QtWidgets.QWidget(parent=self.widget_9)
+        self.widget_10.setGeometry(QtCore.QRect(240, 100, 411, 321))
+        self.widget_10.setStyleSheet("image: url(:/img/img/pomodoro.png);")
+        self.widget_10.setObjectName("widget_10")
+        self.lblTimer = QtWidgets.QLabel(parent=self.widget_10)
+        self.lblTimer.setGeometry(QtCore.QRect(0, 140, 411, 101))
+        self.lblTimer.setStyleSheet("background: transparent;\n"
+"color: white;\n"
+"font: 75 32pt \"MS Shell Dlg 2\";\n"
+"qproperty-alignment: AlignCenter;\n"
+"")
+        self.lblTimer.setObjectName("lblTimer")
+        self.label_2 = QtWidgets.QLabel(parent=self.widget_9)
+        self.label_2.setGeometry(QtCore.QRect(336, 29, 241, 41))
+        self.label_2.setStyleSheet("QLabel {\n"
+"    color: #2e2e2e;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 28pt;\n"
+"    font-weight: bold;\n"
+"    qproperty-alignment: AlignCenter;\n"
+"\n"
+"}\n"
+"")
         self.label_2.setObjectName("label_2")
-        self.verticalLayout_5.addWidget(self.label_2)
+        self.btnStart = QtWidgets.QPushButton(parent=self.widget_9)
+        self.btnStart.setGeometry(QtCore.QRect(370, 450, 161, 41))
+        self.btnStart.setStyleSheet("QPushButton {\n"
+"    background-color: #28a745;\n"
+"    color: white;\n"
+"    font: bold 14pt \"Segoe UI\";\n"
+"    border-radius: 18px;\n"
+"    padding: 8px 16px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #218838;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1e7e34;\n"
+"}\n"
+"")
+        self.btnStart.setObjectName("btnStart")
+        self.verticalLayout_5.addWidget(self.widget_9)
         self.paginas.addWidget(self.pgPomodoro)
         self.pgMatriz = QtWidgets.QWidget()
         self.pgMatriz.setObjectName("pgMatriz")
@@ -519,12 +563,12 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.paginas.setCurrentIndex(0)
+        self.paginas.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Tela Organizar"))
         self.lblCurso.setText(_translate("MainWindow", "Curso Teste preencher"))
         self.lblNome.setText(_translate("MainWindow", "Nome do Usuario"))
         self.btnPerfil.setText(_translate("MainWindow", "Exibir Perfil"))
@@ -540,7 +584,9 @@ class Ui_MainWindow(object):
         self.btnDeleteTask.setText(_translate("MainWindow", "Remover Tarefa  🗑️"))
         self.btnCleanTaskList.setText(_translate("MainWindow", "Limpar Lista de Tarefas"))
         self.taskList.setSortingEnabled(False)
+        self.lblTimer.setText(_translate("MainWindow", "25:00"))
         self.label_2.setText(_translate("MainWindow", "Pomodoro"))
+        self.btnStart.setText(_translate("MainWindow", "Start"))
         self.label_3.setText(_translate("MainWindow", "Matriz de Eisenhower"))
         self.label_4.setText(_translate("MainWindow", "Calendário"))
         self.label_5.setText(_translate("MainWindow", "Desempenho"))
