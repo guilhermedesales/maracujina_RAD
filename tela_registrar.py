@@ -28,10 +28,15 @@ class RegistrarWindow(QMainWindow):
         curso = self.ui.txtCurso.text().strip()
         celular = self.ui.txtCelular.text().strip()
         senha = self.ui.txtSenha.text().strip()
+        senhaConfirm = self.ui.txtConfirmSenha.text().strip()
         email = self.ui.txtEmail.text().strip()
 
         if not email or not senha or not nome or not matricula or not curso or not celular:
             QMessageBox.warning(self, "Campos vazios", "Preencha todos os campos.")
+            return
+        
+        if senha != senhaConfirm:
+            QMessageBox.warning(self, "Aviso", "A senha é diferente da confirmação")
             return
 
         try:

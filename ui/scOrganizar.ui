@@ -584,7 +584,7 @@ font: 75 10pt &quot;Helvetica&quot;;
              <item>
               <widget class="QStackedWidget" name="paginas">
                <property name="currentIndex">
-                <number>1</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="pgTarefas">
                 <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -874,6 +874,36 @@ QPushButton:pressed {
                           </property>
                           <property name="text">
                            <string>Limpar Lista de Tarefas</string>
+                          </property>
+                         </widget>
+                         <widget class="QPushButton" name="btnSalvar">
+                          <property name="geometry">
+                           <rect>
+                            <x>50</x>
+                            <y>380</y>
+                            <width>191</width>
+                            <height>51</height>
+                           </rect>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton {
+    background-color:rgb(118, 189, 236);
+    color: white;
+    font-family: &quot;Segoe UI&quot;;
+    font-size: 16pt;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color:rgb(33, 153, 218);
+}
+</string>
+                          </property>
+                          <property name="text">
+                           <string>Salvar</string>
                           </property>
                          </widget>
                         </widget>

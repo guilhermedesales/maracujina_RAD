@@ -418,6 +418,24 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.btnCleanTaskList.setObjectName("btnCleanTaskList")
+        self.btnSalvar = QtWidgets.QPushButton(parent=self.widget_7)
+        self.btnSalvar.setGeometry(QtCore.QRect(50, 380, 191, 51))
+        self.btnSalvar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(118, 189, 236);\n"
+"    color: white;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 16pt;\n"
+"    font-weight: bold;\n"
+"    border-radius: 20px;\n"
+"    padding: 8px 16px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color:rgb(33, 153, 218);\n"
+"}\n"
+"")
+        self.btnSalvar.setObjectName("btnSalvar")
         self.horizontalLayout_4.addWidget(self.widget_7)
         self.widget_8 = QtWidgets.QWidget(parent=self.widget_3)
         self.widget_8.setObjectName("widget_8")
@@ -563,7 +581,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.paginas.setCurrentIndex(1)
+        self.paginas.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -583,6 +601,7 @@ class Ui_MainWindow(object):
         self.btnAddTask.setText(_translate("MainWindow", "Adicionar Tarefa ➕"))
         self.btnDeleteTask.setText(_translate("MainWindow", "Remover Tarefa  🗑️"))
         self.btnCleanTaskList.setText(_translate("MainWindow", "Limpar Lista de Tarefas"))
+        self.btnSalvar.setText(_translate("MainWindow", "Salvar"))
         self.taskList.setSortingEnabled(False)
         self.lblTimer.setText(_translate("MainWindow", "25:00"))
         self.label_2.setText(_translate("MainWindow", "Pomodoro"))
