@@ -359,7 +359,7 @@ class Ui_MainWindow(object):
         self.txtTask.setText("")
         self.txtTask.setObjectName("txtTask")
         self.btnAddTask = QtWidgets.QPushButton(parent=self.widget_7)
-        self.btnAddTask.setGeometry(QtCore.QRect(30, 160, 241, 51))
+        self.btnAddTask.setGeometry(QtCore.QRect(30, 130, 241, 51))
         self.btnAddTask.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnAddTask.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(134, 225, 140);\n"
@@ -378,7 +378,7 @@ class Ui_MainWindow(object):
 "")
         self.btnAddTask.setObjectName("btnAddTask")
         self.btnDeleteTask = QtWidgets.QPushButton(parent=self.widget_7)
-        self.btnDeleteTask.setGeometry(QtCore.QRect(30, 220, 241, 51))
+        self.btnDeleteTask.setGeometry(QtCore.QRect(30, 250, 241, 51))
         self.btnDeleteTask.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnDeleteTask.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(255, 89, 89);\n"
@@ -418,6 +418,25 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.btnCleanTaskList.setObjectName("btnCleanTaskList")
+        self.btnEditTask = QtWidgets.QPushButton(parent=self.widget_7)
+        self.btnEditTask.setGeometry(QtCore.QRect(30, 190, 241, 51))
+        self.btnEditTask.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btnEditTask.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(0, 150, 255);\n"
+"    color: white;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 16pt;\n"
+"    font-weight: bold;\n"
+"    border-radius: 20px;\n"
+"    padding: 8px 16px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(0, 0, 255);\n"
+"}\n"
+"")
+        self.btnEditTask.setObjectName("btnEditTask")
         self.horizontalLayout_4.addWidget(self.widget_7)
         self.widget_8 = QtWidgets.QWidget(parent=self.widget_3)
         self.widget_8.setObjectName("widget_8")
@@ -563,7 +582,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.paginas.setCurrentIndex(1)
+        self.paginas.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -583,6 +602,7 @@ class Ui_MainWindow(object):
         self.btnAddTask.setText(_translate("MainWindow", "Adicionar Tarefa ➕"))
         self.btnDeleteTask.setText(_translate("MainWindow", "Remover Tarefa  🗑️"))
         self.btnCleanTaskList.setText(_translate("MainWindow", "Limpar Lista de Tarefas"))
+        self.btnEditTask.setText(_translate("MainWindow", "Editar Tarefa ✎ "))
         self.taskList.setSortingEnabled(False)
         self.lblTimer.setText(_translate("MainWindow", "25:00"))
         self.label_2.setText(_translate("MainWindow", "Pomodoro"))

@@ -1,5 +1,5 @@
 import pymysql
-from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtWidgets import QMessageBox, QInputDialog
 from PyQt6.QtGui import QKeySequence, QShortcut
 
 class Tarefas:
@@ -10,6 +10,8 @@ class Tarefas:
         self.ui.btnAddTask.clicked.connect(self.adicionar_tarefa)
         self.ui.btnDeleteTask.clicked.connect(self.remover_tarefa)
         self.ui.btnCleanTaskList.clicked.connect(self.limpar_lista)
+        self.ui.btnEditTask.clicked.connect(self.editar_tarefa)
+
 
         self.carregar_do_bd()
 
@@ -73,6 +75,47 @@ class Tarefas:
         except Exception as e:
             print(f"Erro ao remover tarefa do banco: {e}")
             QMessageBox.critical(None, "Erro", "Erro ao remover tarefa do banco.")
+            
+    ##função para editar tarefa
+    def editar_tarefa(self):
+        row = self.ui.taskList.currentRow()
+        if row == -1:
+            QMessageBox.information(None, "Aviso", "Selecione uma tarefa para editar.")
+            return
+
+        tarefa_antiga = self.ui.taskList.item(row).text()
+
+        nova_tarefa, ok = QInputDialog.getText(
+            None,
+
+            "Editar Tarefa",
+            "Digite o novo nome da tarefa:",
+            text=tarefa_antiga
+        )
+
+        if ok and nova_tarefa.strip():
+            nova_tarefa = nova_tarefa.strip()
+            try:
+                conn = self.conectar_banco()
+                cursor = conn.cursor()
+                cursor.execute("""
+                    UPDATE tarefas
+                    SET nome_tarefa = %s
+                    WHERE id_usuario = %s AND nome_tarefa = %s
+                    LIMIT 1
+                """, (nova_tarefa, self.id_usuario, tarefa_antiga))
+                conn.commit()
+                cursor.close()
+                conn.close()
+
+                self.ui.taskList.item(row).setText(nova_tarefa)
+            except Exception as e:
+                print(f"Erro ao editar tarefa no banco: {e}")
+                QMessageBox.critical(None, "Erro", "Erro ao editar tarefa no banco.")
+        else:
+            QMessageBox.information(None, "Aviso", "Nenhuma alteração feita.")
+
+    
 
     def limpar_lista(self):
         if self.ui.taskList.count() == 0:
