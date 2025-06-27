@@ -25,7 +25,6 @@ create table if not exists tarefas (
     id_tarefa int not null auto_increment,
     id_usuario int not null,
     nome_tarefa varchar(255) not null,
-    status varchar(3) default 'NAO',
     primary key (id_tarefa),
     foreign key (id_usuario) references usuarios(id_usuario)
 );
