@@ -17,6 +17,7 @@
     <file>img/icon/iconActive/task2.png</file>
   </qresource>
   <qresource prefix="img">
+    <file>img/pdf.png</file>
     <file>img/pomodoro.png</file>
   </qresource>
   <qresource prefix="icon">

@@ -28,3 +28,4 @@ create table if not exists tarefas (
     primary key (id_tarefa),
     foreign key (id_usuario) references usuarios(id_usuario)
 );
+SELECT * FROM autenticacoes;

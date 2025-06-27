@@ -316,6 +316,23 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.widget_5)
         self.widget_6 = QtWidgets.QWidget(parent=self.widget_2)
         self.widget_6.setObjectName("widget_6")
+        self.btnPDF = QtWidgets.QPushButton(parent=self.widget_6)
+        self.btnPDF.setGeometry(QtCore.QRect(220, 20, 31, 31))
+        self.btnPDF.setStyleSheet("QPushButton {\n"
+"    \n"
+"    border-image: url(:/img/img/pdf.png);\n"
+"    color: white;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 10pt;\n"
+"    font-weight: bold;\n"
+"    border-radius: 8px;\n"
+"    padding: 8px 16px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"")
+        self.btnPDF.setObjectName("btnPDF")
         self.horizontalLayout_3.addWidget(self.widget_6)
         self.verticalLayout_9.addWidget(self.widget_2)
         self.widget_3 = QtWidgets.QWidget(parent=self.widget)
@@ -597,6 +614,7 @@ class Ui_MainWindow(object):
         self.btnCalendario.setText(_translate("MainWindow", "   Calendário"))
         self.btnDesempenho.setText(_translate("MainWindow", "   Desempenho"))
         self.label.setText(_translate("MainWindow", "Tarefas"))
+        self.btnPDF.setText(_translate("MainWindow", "."))
         self.label_6.setText(_translate("MainWindow", "Nome da Tarefa:"))
         self.txtTask.setPlaceholderText(_translate("MainWindow", "Tarefa"))
         self.btnAddTask.setText(_translate("MainWindow", "Adicionar Tarefa ➕"))

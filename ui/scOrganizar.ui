@@ -683,7 +683,37 @@ font: 75 10pt &quot;Helvetica&quot;;
                         </widget>
                        </item>
                        <item>
-                        <widget class="QWidget" name="widget_6" native="true"/>
+                        <widget class="QWidget" name="widget_6" native="true">
+                         <widget class="QPushButton" name="btnPDF">
+                          <property name="geometry">
+                           <rect>
+                            <x>220</x>
+                            <y>20</y>
+                            <width>31</width>
+                            <height>31</height>
+                           </rect>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton {
+    
+	border-image: url(:/img/img/pdf.png);
+    color: white;
+    font-family: &quot;Segoe UI&quot;;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px 16px;
+    border: none;
+}
+
+
+</string>
+                          </property>
+                          <property name="text">
+                           <string>.</string>
+                          </property>
+                         </widget>
+                        </widget>
                        </item>
                       </layout>
                      </widget>

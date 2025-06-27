@@ -1,6 +1,8 @@
 import pymysql
 from PyQt6.QtWidgets import QMessageBox, QInputDialog
 from PyQt6.QtGui import QKeySequence, QShortcut
+from .gerar_pdf import gerar_pdf
+
 
 class Tarefas:
     def __init__(self, ui, id_usuario):
@@ -11,6 +13,7 @@ class Tarefas:
         self.ui.btnDeleteTask.clicked.connect(self.remover_tarefa)
         self.ui.btnCleanTaskList.clicked.connect(self.limpar_lista)
         self.ui.btnEditTask.clicked.connect(self.editar_tarefa)
+        self.ui.btnPDF.clicked.connect(self.gerar_pdf_usuario)
 
 
         self.carregar_do_bd()
@@ -27,6 +30,14 @@ class Tarefas:
             database='db_maracujina',
             connect_timeout=5
         )
+        
+    def gerar_pdf_usuario(self):
+        caminho = gerar_pdf(self.id_usuario)
+        if caminho:
+            QMessageBox.information(None, "PDF Gerado", f"PDF salvo em:\n{caminho}")
+        else:
+            QMessageBox.critical(None, "Erro", "Erro ao gerar o PDF.")
+
 
     # add tarefa ao bd e a lista de tarefas
     def adicionar_tarefa(self):
