@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>img/sair.png</file>
     <file>img/login/user.png</file>
     <file>img/cadastro/celular.png</file>
     <file>img/cadastro/curso.png</file>

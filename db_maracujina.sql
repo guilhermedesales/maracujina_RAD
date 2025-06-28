@@ -25,7 +25,12 @@ create table if not exists tarefas (
     id_tarefa int not null auto_increment,
     id_usuario int not null,
     nome_tarefa varchar(255) not null,
+    matriz VARCHAR(4),
     primary key (id_tarefa),
     foreign key (id_usuario) references usuarios(id_usuario)
 );
-SELECT * FROM autenticacoes;
+
+alter table tarefas add column matriz VARCHAR(4);
+SELECT * FROM tarefas;
+
+desc tarefas;

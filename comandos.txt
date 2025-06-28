@@ -1,17 +1,20 @@
 - converter o arquivo ui em py:
     (fazer isso sempre q alterar a tela no QtDesigner)
 
-** pyuic6 -o pasta/arq.py pasta/arq.ui **
+** pyuic6 -o telas/ui_arquivo.py ui/arq.ui **
+** python -m PyQt6.uic.pyuic -o telas/ui_arquivo.py ui/arquivo.ui ** (caso o de cima não funcione)
 
 ------------------------------------------------------------------------------------------
 - converter arquivo qrc em py:
     (depois de converter tem q mudar no arquivo py gerado o import para pyqt6)
     (fazer isso sempre q adicionar imagem no arquivo qrc)
 
-** res.qrc -o res_rc.py **
+** python -m PyQt5.pyrcc_main res.qrc -o res_rc.py **
 
 ------------------------------------------------------------------------------------------
 - pip install:
 
 pip install pymysql
 pip install pyqt6
+pip install pyqt6_tools (nem sempre é preciso)
+pip install reportlab

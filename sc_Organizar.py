@@ -4,6 +4,8 @@ from tela_perfil import PerfilWindow
 from telas.ui_scOrganizar import Ui_MainWindow
 from funcionalidadesOrganizar.tarefas import Tarefas
 from funcionalidadesOrganizar.pomodoro import Pomodoro
+from funcionalidadesOrganizar.matriz import adicionar_tarefa_a_matriz
+#from tela_login import LoginWindow
 
 import pymysql
 
@@ -20,6 +22,15 @@ class ScOrganizarWindow(QMainWindow):
 
         self.ui.btnPerfil.clicked.connect(self.telaPerfil)
         self.ui.btnMenuLargo.clicked.connect(self.expandir_menu)
+        
+        self.ui.btnUI.clicked.connect(self.adicionar_ui)
+        self.ui.btnUN.clicked.connect(self.adicionar_un)
+        self.ui.btnNI.clicked.connect(self.adicionar_ni)
+        self.ui.btnNN.clicked.connect(self.adicionar_nn)
+        
+        self.ui.btnSair.clicked.connect(self.sair)
+
+        self.carregar_tarefas_matriz()
 
         self.carregar_dados_usuario()
 
@@ -27,8 +38,8 @@ class ScOrganizarWindow(QMainWindow):
             self.ui.btnTarefas: self.ui.pgTarefas,
             self.ui.btnPomodoro: self.ui.pgPomodoro,
             self.ui.btnMatriz: self.ui.pgMatriz,
-            self.ui.btnCalendario: self.ui.pgCalendario,
-            self.ui.btnDesempenho: self.ui.pgDesempenho
+            #self.ui.btnCalendario: self.ui.pgCalendario,
+            #self.ui.btnDesempenho: self.ui.pgDesempenho
         }
 
         for botao, pagina in self.botoes_menu.items():
@@ -39,10 +50,67 @@ class ScOrganizarWindow(QMainWindow):
         #gerenciador de tarefas
         self.tarefas_widget = Tarefas(self.ui, self.id_usuario)
 
+    def adicionar_ui(self):
+        print("Botão UI clicado")
+        nome = adicionar_tarefa_a_matriz(self, self.id_usuario, "UI")
+        if nome:
+            self.ui.listUI.addItem(nome)
+
+    def adicionar_un(self):
+        print("Botão UN clicado")
+        nome = adicionar_tarefa_a_matriz(self, self.id_usuario, "UN")
+        if nome:
+            self.ui.listUN.addItem(nome)
+
+    def adicionar_ni(self):
+        print("Botão NI clicado")
+        nome = adicionar_tarefa_a_matriz(self, self.id_usuario, "NI")
+        if nome:
+            self.ui.listNI.addItem(nome)
+
+    def adicionar_nn(self):
+        print("Botão NN clicado")
+        nome = adicionar_tarefa_a_matriz(self, self.id_usuario, "NN")
+        if nome:
+            self.ui.listNN.addItem(nome)
+
+    def carregar_tarefas_matriz(self):
+        try:
+            conexao = self.conectar_banco()
+            with conexao.cursor() as cursor:
+                cursor.execute("""
+                    SELECT nome_tarefa, matriz
+                    FROM tarefas
+                    WHERE id_usuario = %s AND matriz IS NOT NULL
+                """, (self.id_usuario,))
+                tarefas = cursor.fetchall()
+
+                for nome, matriz in tarefas:
+                    if matriz == "UI":
+                        self.ui.listUI.addItem(nome)
+                    elif matriz == "UN":
+                        self.ui.listUN.addItem(nome)
+                    elif matriz == "NI":
+                        self.ui.listNI.addItem(nome)
+                    elif matriz == "NN":
+                        self.ui.listNN.addItem(nome)
+        except Exception as e:
+            print(f"[ERRO] ao carregar tarefas da matriz: {e}")
+        finally:
+            conexao.close()
+
+    
     def telaPerfil(self):
         self.perfil_window = PerfilWindow()
         self.perfil_window.show()
         self.close()
+        
+    def sair(self):
+        from tela_login import LoginWindow
+        self.login_window = LoginWindow()
+        self.login_window.show()
+        self.close()
+
 
     def expandir_menu(self):
         width = self.ui.menuLateral.width()

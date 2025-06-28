@@ -55,8 +55,11 @@ def gerar_pdf(id_usuario):
         elementos = []
 
         # cabeçalho
+        data_formatada = datetime.now().strftime("%d/%m/%Y")
         elementos.append(Paragraph("Dados do Aluno", styles['Title']))
+        elementos.append(Paragraph(f"<i>Gerado em: {data_formatada}</i>", styles['Normal']))
         elementos.append(Spacer(1, 12))
+
         elementos.append(Paragraph(f"<b>Nome:</b> {nome}", styles['Normal']))
         elementos.append(Paragraph(f"<b>Matrícula:</b> {matricula}", styles['Normal']))
         elementos.append(Paragraph(f"<b>Email:</b> {email}", styles['Normal']))

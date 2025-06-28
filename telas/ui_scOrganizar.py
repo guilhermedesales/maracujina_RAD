@@ -207,17 +207,17 @@ class Ui_MainWindow(object):
         self.btnPomodoro.setIconSize(QtCore.QSize(30, 30))
         self.btnPomodoro.setCheckable(True)
         self.btnPomodoro.setObjectName("btnPomodoro")
-        self.btnCalendario = QtWidgets.QPushButton(parent=self.frame_6)
-        self.btnCalendario.setGeometry(QtCore.QRect(0, 170, 200, 50))
+        self.btnSair = QtWidgets.QPushButton(parent=self.frame_6)
+        self.btnSair.setGeometry(QtCore.QRect(0, 420, 200, 50))
         font = QtGui.QFont()
         font.setFamily("Helvetica")
         font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(9)
-        self.btnCalendario.setFont(font)
-        self.btnCalendario.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btnCalendario.setStyleSheet("QPushButton{\n"
+        self.btnSair.setFont(font)
+        self.btnSair.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btnSair.setStyleSheet("QPushButton{\n"
 "\n"
 "border:none;\n"
 "background:transparent;\n"
@@ -225,45 +225,24 @@ class Ui_MainWindow(object):
 "text-align:left;\n"
 "font: 75 10pt \"Helvetica\";\n"
 "\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"\n"
+"    background-color: rgb(255, 229, 229);\n"
 "\n"
 "}\n"
 "\n"
 "")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/icon/img/icon/calendar-silhouette.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon4.addPixmap(QtGui.QPixmap(":/iconActive/img/icon/iconActive/calendar-silhouette2.png"), QtGui.QIcon.Mode.Active, QtGui.QIcon.State.On)
-        self.btnCalendario.setIcon(icon4)
-        self.btnCalendario.setIconSize(QtCore.QSize(30, 30))
-        self.btnCalendario.setCheckable(True)
-        self.btnCalendario.setObjectName("btnCalendario")
-        self.btnDesempenho = QtWidgets.QPushButton(parent=self.frame_6)
-        self.btnDesempenho.setGeometry(QtCore.QRect(0, 220, 200, 50))
-        font = QtGui.QFont()
-        font.setFamily("Helvetica")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(9)
-        self.btnDesempenho.setFont(font)
-        self.btnDesempenho.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btnDesempenho.setStyleSheet("QPushButton{\n"
-"\n"
-"border:none;\n"
-"background:transparent;\n"
-"padding:10px;\n"
-"text-align:left;\n"
-"font: 75 10pt \"Helvetica\";\n"
-"\n"
-"\n"
-"}\n"
-"")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/icon/img/icon/line-chart.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon5.addPixmap(QtGui.QPixmap(":/iconActive/img/icon/iconActive/line-chart2.png"), QtGui.QIcon.Mode.Active, QtGui.QIcon.State.On)
-        self.btnDesempenho.setIcon(icon5)
-        self.btnDesempenho.setIconSize(QtCore.QSize(30, 30))
-        self.btnDesempenho.setCheckable(True)
-        self.btnDesempenho.setObjectName("btnDesempenho")
+        icon4.addPixmap(QtGui.QPixmap(":/img/sair.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap("ui\\../img/sair.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon4.addPixmap(QtGui.QPixmap("ui\\../img/sair.png"), QtGui.QIcon.Mode.Active, QtGui.QIcon.State.On)
+        self.btnSair.setIcon(icon4)
+        self.btnSair.setIconSize(QtCore.QSize(30, 30))
+        self.btnSair.setCheckable(True)
+        self.btnSair.setObjectName("btnSair")
         self.verticalLayout_2.addWidget(self.frame_6)
         self.horizontalLayout_2.addWidget(self.menuLateral)
         self.telas = QtWidgets.QFrame(parent=self.frame_2)
@@ -316,23 +295,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.widget_5)
         self.widget_6 = QtWidgets.QWidget(parent=self.widget_2)
         self.widget_6.setObjectName("widget_6")
-        self.btnPDF = QtWidgets.QPushButton(parent=self.widget_6)
-        self.btnPDF.setGeometry(QtCore.QRect(220, 20, 31, 31))
-        self.btnPDF.setStyleSheet("QPushButton {\n"
-"    \n"
-"    border-image: url(:/img/img/pdf.png);\n"
-"    color: white;\n"
-"    font-family: \"Segoe UI\";\n"
-"    font-size: 10pt;\n"
-"    font-weight: bold;\n"
-"    border-radius: 8px;\n"
-"    padding: 8px 16px;\n"
-"    border: none;\n"
-"}\n"
-"\n"
-"\n"
-"")
-        self.btnPDF.setObjectName("btnPDF")
         self.horizontalLayout_3.addWidget(self.widget_6)
         self.verticalLayout_9.addWidget(self.widget_2)
         self.widget_3 = QtWidgets.QWidget(parent=self.widget)
@@ -454,6 +416,34 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.btnEditTask.setObjectName("btnEditTask")
+        self.icon = QtWidgets.QPushButton(parent=self.widget_7)
+        self.icon.setGeometry(QtCore.QRect(20, 410, 41, 41))
+        self.icon.setStyleSheet("QPushButton {\n"
+"    \n"
+"    border-image: url(:/img/img/pdf.png);\n"
+"    color: white;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 10pt;\n"
+"    font-weight: bold;\n"
+"    border-radius: 8px;\n"
+"    padding: 8px 16px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"")
+        self.icon.setObjectName("icon")
+        self.label_8 = QtWidgets.QLabel(parent=self.widget_7)
+        self.label_8.setGeometry(QtCore.QRect(70, 415, 111, 31))
+        self.label_8.setStyleSheet("font: 12pt \"Helvetica\";\n"
+"background: transparent;")
+        self.label_8.setObjectName("label_8")
+        self.btnPDF = QtWidgets.QPushButton(parent=self.widget_7)
+        self.btnPDF.setGeometry(QtCore.QRect(20, 402, 171, 51))
+        self.btnPDF.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btnPDF.setStyleSheet("background:transparent;")
+        self.btnPDF.setText("")
+        self.btnPDF.setObjectName("btnPDF")
         self.horizontalLayout_4.addWidget(self.widget_7)
         self.widget_8 = QtWidgets.QWidget(parent=self.widget_3)
         self.widget_8.setObjectName("widget_8")
@@ -565,10 +555,172 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.label_3 = QtWidgets.QLabel(parent=self.pgMatriz)
-        self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.widget_11 = QtWidgets.QWidget(parent=self.pgMatriz)
+        self.widget_11.setObjectName("widget_11")
+        self.listUI = QtWidgets.QListWidget(parent=self.widget_11)
+        self.listUI.setGeometry(QtCore.QRect(50, 120, 256, 192))
+        self.listUI.setStyleSheet("background-color: rgb(255, 65, 48);\n"
+"color: white;\n"
+"border: 2px solid rgb(200, 50, 40);\n"
+"font-weight: bold;\n"
+"")
+        self.listUI.setObjectName("listUI")
+        self.listUN = QtWidgets.QListWidget(parent=self.widget_11)
+        self.listUN.setGeometry(QtCore.QRect(50, 330, 256, 192))
+        self.listUN.setStyleSheet("background-color: rgb(0, 200, 83);\n"
+"color: white;\n"
+"border: 2px solid rgb(0, 150, 60);\n"
+"font-weight: bold;\n"
+"")
+        self.listUN.setObjectName("listUN")
+        self.listNN = QtWidgets.QListWidget(parent=self.widget_11)
+        self.listNN.setGeometry(QtCore.QRect(330, 330, 256, 192))
+        self.listNN.setStyleSheet("background-color: rgb(96, 181, 255);\n"
+"color: white;\n"
+"border: 2px solid rgb(71, 166, 255);\n"
+"font-weight: bold;\n"
+"")
+        self.listNN.setObjectName("listNN")
+        self.listNI = QtWidgets.QListWidget(parent=self.widget_11)
+        self.listNI.setGeometry(QtCore.QRect(330, 120, 256, 192))
+        self.listNI.setStyleSheet("background-color: rgb(255, 200, 0);\n"
+"color: black;\n"
+"border: 2px solid rgb(200, 160, 0);\n"
+"font-weight: bold;\n"
+"")
+        self.listNI.setObjectName("listNI")
+        self.label_3 = QtWidgets.QLabel(parent=self.widget_11)
+        self.label_3.setGeometry(QtCore.QRect(70, 79, 201, 31))
+        self.label_3.setStyleSheet("background-color: rgb(96, 125, 139);\n"
+"color: white;\n"
+"font-weight: bold;\n"
+"padding: 6px 12px;\n"
+"border-radius: 6px;\n"
+"text-align: center;\n"
+"qproperty-alignment: \'AlignCenter\';\n"
+"")
         self.label_3.setObjectName("label_3")
-        self.verticalLayout_6.addWidget(self.label_3)
+        self.label_9 = QtWidgets.QLabel(parent=self.widget_11)
+        self.label_9.setGeometry(QtCore.QRect(360, 80, 201, 31))
+        self.label_9.setStyleSheet("background-color: rgb(96, 125, 139);\n"
+"color: white;\n"
+"font-weight: bold;\n"
+"padding: 6px 12px;\n"
+"border-radius: 6px;\n"
+"text-align: center;\n"
+"qproperty-alignment: \'AlignCenter\';\n"
+"")
+        self.label_9.setObjectName("label_9")
+        self.label_10 = QtWidgets.QLabel(parent=self.widget_11)
+        self.label_10.setGeometry(QtCore.QRect(600, 210, 201, 31))
+        self.label_10.setStyleSheet("background-color: rgb(96, 125, 139);\n"
+"color: white;\n"
+"font-weight: bold;\n"
+"padding: 6px 12px;\n"
+"border-radius: 6px;\n"
+"text-align: center;\n"
+"qproperty-alignment: \'AlignCenter\';\n"
+"")
+        self.label_10.setObjectName("label_10")
+        self.label_11 = QtWidgets.QLabel(parent=self.widget_11)
+        self.label_11.setGeometry(QtCore.QRect(600, 410, 201, 31))
+        self.label_11.setStyleSheet("background-color: rgb(96, 125, 139);\n"
+"color: white;\n"
+"font-weight: bold;\n"
+"padding: 6px 12px;\n"
+"border-radius: 6px;\n"
+"text-align: center;\n"
+"qproperty-alignment: \'AlignCenter\';\n"
+"")
+        self.label_11.setObjectName("label_11")
+        self.label_7 = QtWidgets.QLabel(parent=self.widget_11)
+        self.label_7.setGeometry(QtCore.QRect(40, 10, 581, 51))
+        self.label_7.setStyleSheet("QLabel {\n"
+"    font-size: 25px;\n"
+"    font-weight: 700;\n"
+"    color: rgb(30, 30, 30);\n"
+"\n"
+"    padding: 12px 24px;\n"
+"    border-radius: 12px;\n"
+"\n"
+"    qproperty-alignment: \'AlignCenter\';\n"
+"    font-family: \'Segoe UI\', Tahoma, Geneva, Verdana, sans-serif;\n"
+"    letter-spacing: 2px;\n"
+"    text-transform: uppercase;\n"
+"    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);\n"
+"}\n"
+"")
+        self.label_7.setObjectName("label_7")
+        self.btnUI = QtWidgets.QPushButton(parent=self.widget_11)
+        self.btnUI.setGeometry(QtCore.QRect(270, 120, 31, 31))
+        self.btnUI.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btnUI.setStyleSheet("QPushButton {\n"
+"    background-color: transparent;\n"
+"    color: #333;\n"
+"    font: 75 25pt \"MS Shell Dlg 2\";\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 20px;\n"
+"    width: 40px;\n"
+"    height: 40px;\n"
+"}")
+        self.btnUI.setObjectName("btnUI")
+        self.btnNI = QtWidgets.QPushButton(parent=self.widget_11)
+        self.btnNI.setGeometry(QtCore.QRect(550, 120, 31, 31))
+        self.btnNI.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btnNI.setStyleSheet("QPushButton {\n"
+"    background-color: transparent;\n"
+"    color: #333;\n"
+"    font: 75 25pt \"MS Shell Dlg 2\";\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 20px;\n"
+"    width: 40px;\n"
+"    height: 40px;\n"
+"}")
+        self.btnNI.setObjectName("btnNI")
+        self.btnUN = QtWidgets.QPushButton(parent=self.widget_11)
+        self.btnUN.setGeometry(QtCore.QRect(270, 330, 31, 31))
+        self.btnUN.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btnUN.setStyleSheet("QPushButton {\n"
+"    background-color: transparent;\n"
+"    color: #333;\n"
+"    font: 75 25pt \"MS Shell Dlg 2\";\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 20px;\n"
+"    width: 40px;\n"
+"    height: 40px;\n"
+"}")
+        self.btnUN.setObjectName("btnUN")
+        self.btnNN = QtWidgets.QPushButton(parent=self.widget_11)
+        self.btnNN.setGeometry(QtCore.QRect(550, 330, 31, 31))
+        self.btnNN.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btnNN.setStyleSheet("QPushButton {\n"
+"    background-color: transparent;\n"
+"    color: #333;\n"
+"    font: 75 25pt \"MS Shell Dlg 2\";\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 20px;\n"
+"    width: 40px;\n"
+"    height: 40px;\n"
+"}")
+        self.btnNN.setObjectName("btnNN")
+        self.listUI.raise_()
+        self.listUN.raise_()
+        self.listNN.raise_()
+        self.listNI.raise_()
+        self.label_3.raise_()
+        self.label_9.raise_()
+        self.label_10.raise_()
+        self.label_11.raise_()
+        self.label_7.raise_()
+        self.btnUI.raise_()
+        self.btnUN.raise_()
+        self.btnNN.raise_()
+        self.btnNI.raise_()
+        self.verticalLayout_6.addWidget(self.widget_11)
         self.paginas.addWidget(self.pgMatriz)
         self.pgCalendario = QtWidgets.QWidget()
         self.pgCalendario.setObjectName("pgCalendario")
@@ -611,20 +763,28 @@ class Ui_MainWindow(object):
         self.btnTarefas.setText(_translate("MainWindow", "   Tarefas"))
         self.btnMatriz.setText(_translate("MainWindow", "   Matriz de Eisenhower"))
         self.btnPomodoro.setText(_translate("MainWindow", "   Pomodoro"))
-        self.btnCalendario.setText(_translate("MainWindow", "   Calendário"))
-        self.btnDesempenho.setText(_translate("MainWindow", "   Desempenho"))
+        self.btnSair.setText(_translate("MainWindow", "    LogOut"))
         self.label.setText(_translate("MainWindow", "Tarefas"))
-        self.btnPDF.setText(_translate("MainWindow", "."))
         self.label_6.setText(_translate("MainWindow", "Nome da Tarefa:"))
         self.txtTask.setPlaceholderText(_translate("MainWindow", "Tarefa"))
         self.btnAddTask.setText(_translate("MainWindow", "Adicionar Tarefa ➕"))
         self.btnDeleteTask.setText(_translate("MainWindow", "Remover Tarefa  🗑️"))
         self.btnCleanTaskList.setText(_translate("MainWindow", "Limpar Lista de Tarefas"))
-        self.btnEditTask.setText(_translate("MainWindow", "Editar Tarefa ✎ "))
+        self.btnEditTask.setText(_translate("MainWindow", "Editar Tarefa        ✎ "))
+        self.icon.setText(_translate("MainWindow", "."))
+        self.label_8.setText(_translate("MainWindow", "Gerar Relatorio"))
         self.taskList.setSortingEnabled(False)
         self.lblTimer.setText(_translate("MainWindow", "25:00"))
         self.label_2.setText(_translate("MainWindow", "Pomodoro"))
         self.btnStart.setText(_translate("MainWindow", "Start"))
-        self.label_3.setText(_translate("MainWindow", "Matriz de Eisenhower"))
+        self.label_3.setText(_translate("MainWindow", "URGENTE"))
+        self.label_9.setText(_translate("MainWindow", "NÃO URGENTE"))
+        self.label_10.setText(_translate("MainWindow", "IMPORTANTE"))
+        self.label_11.setText(_translate("MainWindow", "NÃO IMPORTANTE"))
+        self.label_7.setText(_translate("MainWindow", "Matriz de Eisenhower"))
+        self.btnUI.setText(_translate("MainWindow", "+"))
+        self.btnNI.setText(_translate("MainWindow", "+"))
+        self.btnUN.setText(_translate("MainWindow", "+"))
+        self.btnNN.setText(_translate("MainWindow", "+"))
         self.label_4.setText(_translate("MainWindow", "Calendário"))
         self.label_5.setText(_translate("MainWindow", "Desempenho"))
