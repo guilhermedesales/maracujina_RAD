@@ -1,8 +1,8 @@
 Requisitos do projeto
 
-* Python 3.13.5 (usado no desenvolvimento)
+* Python 3.13.5 (usado no desenvolvimento), mas funcionou em outras versões do python, como a 3.11
 
-* Execute o main 
+* Execute o main pra rodar a aplicação
 
     python main.py
 
