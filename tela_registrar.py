@@ -2,7 +2,9 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from PyQt6.uic import loadUi
 from telas.ui_telaRegistrar import Ui_MainWindow
 from sc_Organizar import ScOrganizarWindow
-import pymysql
+#import pymysql
+from db_config import dbConnect
+
 
 class RegistrarWindow(QMainWindow):
     def __init__(self):
@@ -51,13 +53,7 @@ class RegistrarWindow(QMainWindow):
             return
 
         try:
-            conexao = pymysql.connect(
-                host='localhost',
-                user='root',
-                password='root',
-                database='db_maracujina',
-                connect_timeout=5
-            )
+            conexao = dbConnect()
             cursor = conexao.cursor()
 
             cursor.execute("SELECT * FROM usuarios WHERE email = %s", (email,))

@@ -8,7 +8,8 @@ from funcionalidadesOrganizar.pomodoro import Pomodoro
 from funcionalidadesOrganizar.matriz import adicionar_tarefa_a_matriz
 #from tela_login import LoginWindow
 
-import pymysql
+#import pymysql
+from db_config import dbConnect
 
 class ScOrganizarWindow(QMainWindow):
     def __init__(self, id_usuario):
@@ -142,13 +143,7 @@ class ScOrganizarWindow(QMainWindow):
             self.pomodoro_widget = Pomodoro(self)
 
     def conectar_banco(self):
-        return pymysql.connect(
-            host='localhost',
-            user='root',
-            password='root',
-            database='db_maracujina',
-            connect_timeout=5
-        )
+        return dbConnect()
 
     def carregar_dados_usuario(self):
         try:

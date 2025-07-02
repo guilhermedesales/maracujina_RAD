@@ -1,4 +1,5 @@
 import pymysql
+from db_config import DB_HOST, DB_USER, DB_PASS, DB_PORT
 
 _SQL = """
 CREATE DATABASE IF NOT EXISTS db_maracujina
@@ -40,12 +41,13 @@ def ensure_database(
 ):
 
     conn = pymysql.connect(
-        host=host,
-        user=user,
-        password=password,
-        port=port,
-        autocommit=True   
+    host=DB_HOST,
+    user=DB_USER,
+    password=DB_PASS,
+    port=DB_PORT,
+    autocommit=True
     )
+    
     try:
         with conn.cursor() as cur:
             for stmt in _SQL.strip().split(";"):

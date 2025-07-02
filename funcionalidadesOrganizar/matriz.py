@@ -1,15 +1,9 @@
 from PyQt6.QtWidgets import QInputDialog, QMessageBox
-import pymysql
-
+#import pymysql
+from db_config import dbConnect
 
 def conectar_banco():
-    return pymysql.connect(
-        host='localhost',
-        user='root',
-        password='root',
-        database='db_maracujina',
-        connect_timeout=5
-    )
+    return dbConnect()
 
 
 def buscar_tarefas_disponiveis(id_usuario):

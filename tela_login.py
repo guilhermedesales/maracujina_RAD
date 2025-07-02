@@ -3,6 +3,7 @@ from PyQt6.uic import loadUi
 from telas.ui_telaLogin import Ui_MainWindow
 from tela_registrar import RegistrarWindow
 from sc_Organizar import ScOrganizarWindow
+from db_config import dbConnect
 import pymysql
 
 class LoginWindow(QMainWindow):
@@ -27,13 +28,7 @@ class LoginWindow(QMainWindow):
         self.close()
 
     def conectar_banco(self):
-        return pymysql.connect(
-            host='localhost',
-            user='root',
-            password='root',
-            database='db_maracujina',
-            connect_timeout=5
-        )
+        return dbConnect()
 
     def validar_usuario(self, matricula, senha):
         conexao = self.conectar_banco()

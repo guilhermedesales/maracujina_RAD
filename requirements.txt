@@ -3,3 +3,4 @@ PyQt6-Qt6>=6.6
 PyQt6-Sip>=13
 pymysql>=1.1
 reportlab>=4.1
+cryptography>=42

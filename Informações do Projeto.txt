@@ -1,5 +1,7 @@
 Requisitos do projeto
 
+---------------------------------------------------------------------------
+
 * Python 3.13.5 (usado no desenvolvimento), mas funcionou em outras versões do python, como a 3.11
 
 * Execute o main pra rodar a aplicação
@@ -12,11 +14,51 @@ Requisitos do projeto
     pip install pyqt6
     pip install pyqt6_tools     # (nem sempre necessário)
     pip install reportlab
+    pip install cryptography
+
+    ou use:
+
+    pip pip install pymysql pyqt6 pyqt6_tools reportlab cryptography
+
 
 * Use `requirements.txt` para instalar tudo de uma vez:
 
     pip install -r requirements.txt
 
+
+----------------------------------------------------------------------------------------
+
+* configurar o acesso ao banco
+
+no arquivo **db_config.py** tem o trecho:
+
+DB_HOST = "localhost"
+DB_USER = "root"
+DB_PASS = "root"
+DB_NAME = "db_maracujina"
+DB_PORT = 3306
+
+basta mudar os campos para um usuario e senha q funcione no seu MySQL
+
+--------
+
+nos exemplos da aula o user é *root* e a senha é *senha123*, ficaria assim no db_config.py
+
+DB_HOST = "localhost"
+DB_USER = "root"
+DB_PASS = "senha123"
+DB_NAME = "db_maracujina"
+DB_PORT = 3306
+
+** se não lembrar o user e senha, basta executar esses comandos no workbench pra criar um novo user com as permissões necessarias:
+
+CREATE USER IF NOT EXISTS 'user'@'localhost' IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON db_maracujina.* TO 'user'@'localhost';
+FLUSH PRIVILEGES;
+
+e então mudar no arquivo 'db_config.py' o DB_USER pra "user" e DB_PASS pra "pass" 
+
+-------------------------------------------------------------------------------------
 
 -- Gerar arquivos a partir do Qt Designer
 

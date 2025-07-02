@@ -1,4 +1,5 @@
-import pymysql
+#import pymysql
+from db_config import dbConnect
 from PyQt6.QtWidgets import QMessageBox, QInputDialog
 from PyQt6.QtGui import QKeySequence, QShortcut
 from .gerar_pdf import gerar_pdf
@@ -23,13 +24,7 @@ class Tarefas:
         self.ui.txtTask.returnPressed.connect(self.adicionar_tarefa)
         
     def conectar_banco(self):
-        return pymysql.connect(
-            host='localhost',
-            user='root',
-            password='root',
-            database='db_maracujina',
-            connect_timeout=5
-        )
+        return dbConnect()
         
     def gerar_pdf_usuario(self):
         caminho = gerar_pdf(self.id_usuario)

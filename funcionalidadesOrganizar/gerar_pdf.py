@@ -1,5 +1,6 @@
 import os
-import pymysql
+#import pymysql
+from db_config import dbConnect
 from datetime import datetime
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
@@ -7,13 +8,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 
 def conectar_banco():
-    return pymysql.connect(
-        host='localhost',
-        user='root',
-        password='root',
-        database='db_maracujina',
-        connect_timeout=5
-    )
+    return dbConnect()
 
 def gerar_pdf(id_usuario):
     try:
