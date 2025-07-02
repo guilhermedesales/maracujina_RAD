@@ -39,7 +39,7 @@ class Ui_MainWindow(object):
 "background:transparent;")
         self.txtFundo2.setObjectName("txtFundo2")
         self.btnConfirm = QtWidgets.QPushButton(parent=self.frame)
-        self.btnConfirm.setGeometry(QtCore.QRect(450, 280, 261, 51))
+        self.btnConfirm.setGeometry(QtCore.QRect(440, 280, 261, 51))
         self.btnConfirm.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btnConfirm.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(48, 66, 107);\n"
@@ -57,23 +57,6 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.btnConfirm.setObjectName("btnConfirm")
-        self.label = QtWidgets.QLabel(parent=self.frame)
-        self.label.setEnabled(True)
-        self.label.setGeometry(QtCore.QRect(420, 230, 91, 21))
-        font = QtGui.QFont()
-        font.setFamily("Helvetica")
-        font.setPointSize(8)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.label.setFont(font)
-        self.label.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.label.setStyleSheet("color: #30426b;\n"
-"font: 8pt \"Helvetica\";\n"
-"border: none;\n"
-"padding: 0px")
-        self.label.setWordWrap(False)
-        self.label.setObjectName("label")
         self.widget_3 = QtWidgets.QWidget(parent=self.frame)
         self.widget_3.setGeometry(QtCore.QRect(420, 110, 41, 41))
         self.widget_3.setStyleSheet("border-image: url(:/img/login/user.png);\n"
@@ -190,7 +173,6 @@ class Ui_MainWindow(object):
         self.widget_2.raise_()
         self.txtFundo2.raise_()
         self.btnConfirm.raise_()
-        self.label.raise_()
         self.txtFundo1.raise_()
         self.txtLogin.raise_()
         self.widget_3.raise_()
@@ -219,7 +201,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Login"))
         self.frame.setToolTip(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.btnConfirm.setText(_translate("MainWindow", "LOGIN"))
-        self.label.setText(_translate("MainWindow", "Esqueceu a senha"))
         self.txtLogin.setPlaceholderText(_translate("MainWindow", "matrícula"))
         self.txtSenha.setPlaceholderText(_translate("MainWindow", "Senha"))
         self.label_2.setText(_translate("MainWindow", "Não possui conta?"))

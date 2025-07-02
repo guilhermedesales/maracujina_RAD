@@ -29,8 +29,3 @@ create table if not exists tarefas (
     primary key (id_tarefa),
     foreign key (id_usuario) references usuarios(id_usuario)
 );
-
-alter table tarefas add column matriz VARCHAR(4);
-SELECT * FROM tarefas;
-
-desc tarefas;

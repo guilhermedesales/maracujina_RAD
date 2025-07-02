@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PyQt6.uic import loadUi
 from telas.ui_telaLogin import Ui_MainWindow
 from tela_registrar import RegistrarWindow
 from sc_Organizar import ScOrganizarWindow
@@ -7,11 +8,13 @@ import pymysql
 class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
+        
+        loadUi("ui/login.ui", self)
+        #self.ui = Ui_MainWindow()
+        #self.ui.setupUi(self)
 
-        self.ui.btnConfirm.clicked.connect(self.verifica_login)
-        self.ui.btnRegistrar.clicked.connect(self.telaRegistrar)
+        self.btnConfirm.clicked.connect(self.verifica_login)
+        self.btnRegistrar.clicked.connect(self.telaRegistrar)
 
     def telaRegistrar(self):
         self.registrar_window = RegistrarWindow()
@@ -55,26 +58,26 @@ class LoginWindow(QMainWindow):
                     self.telaInicial(id_usuario)
                 else:
                     print("Senha incorreta.")
-                    self.ui.lblErro.setText("Login ou senha incorretos.")
+                    self.lblErro.setText("Login ou senha incorretos.")
             else:
                 print("Usuário não encontrado.")
-                self.ui.lblErro.setText("Login ou senha incorretos.")
+                self.lblErro.setText("Login ou senha incorretos.")
 
             cursor.close()
             conexao.close()
 
         except Exception as e:
             print("Erro ao conectar:")
-            self.ui.lblErro.setText("Falha ao conectar ao banco.")
+            self.lblErro.setText("Falha ao conectar ao banco.")
 
     def verifica_login(self):
         print("Botão clicado para verificar login")
 
-        matricula = self.ui.txtLogin.text().strip()
-        senha = self.ui.txtSenha.text().strip()
+        matricula = self.txtLogin.text().strip()
+        senha = self.txtSenha.text().strip()
 
         if not matricula or not senha:
-            self.ui.lblErro.setText("Preencha todos os campos")
+            self.lblErro.setText("Preencha todos os campos")
             return
 
         self.validar_usuario(matricula, senha)

@@ -81,7 +81,7 @@ class Ui_MainWindow(object):
         self.btnMenuLargo.setIconSize(QtCore.QSize(30, 30))
         self.btnMenuLargo.setObjectName("btnMenuLargo")
         self.lblCurso = QtWidgets.QLabel(parent=self.frame_5)
-        self.lblCurso.setGeometry(QtCore.QRect(50, 20, 141, 21))
+        self.lblCurso.setGeometry(QtCore.QRect(50, 30, 141, 21))
         self.lblCurso.setAutoFillBackground(False)
         self.lblCurso.setStyleSheet("background:transparent;\n"
 "font: 8pt \"Helvetica Light\";\n"
@@ -100,20 +100,6 @@ class Ui_MainWindow(object):
 "font: 75 10pt \"Helvetica Rounded\";\n"
 "color: black;")
         self.lblNome.setObjectName("lblNome")
-        self.btnPerfil = QtWidgets.QPushButton(parent=self.frame_5)
-        self.btnPerfil.setGeometry(QtCore.QRect(50, 40, 61, 16))
-        self.btnPerfil.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btnPerfil.setStyleSheet("QPushButton{\n"
-"    background:transparent;\n"
-"    border:none;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"\n"
-"    color:white;\n"
-"\n"
-"}")
-        self.btnPerfil.setObjectName("btnPerfil")
         self.verticalLayout_2.addWidget(self.frame_5)
         self.frame_6 = QtWidgets.QFrame(parent=self.menuLateral)
         self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -759,7 +745,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Tela Organizar"))
         self.lblCurso.setText(_translate("MainWindow", "Curso Teste preencher"))
         self.lblNome.setText(_translate("MainWindow", "Nome do Usuario"))
-        self.btnPerfil.setText(_translate("MainWindow", "Exibir Perfil"))
         self.btnTarefas.setText(_translate("MainWindow", "   Tarefas"))
         self.btnMatriz.setText(_translate("MainWindow", "   Matriz de Eisenhower"))
         self.btnPomodoro.setText(_translate("MainWindow", "   Pomodoro"))

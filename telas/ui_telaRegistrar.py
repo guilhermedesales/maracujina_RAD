@@ -303,6 +303,21 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        MainWindow.setTabOrder(self.txtNome, self.txtEmail)
+        MainWindow.setTabOrder(self.txtEmail, self.txtMatricula)
+        MainWindow.setTabOrder(self.txtMatricula, self.txtCurso)
+        MainWindow.setTabOrder(self.txtCurso, self.txtCelular)
+        MainWindow.setTabOrder(self.txtCelular, self.txtSenha)
+        MainWindow.setTabOrder(self.txtSenha, self.txtConfirmSenha)
+        MainWindow.setTabOrder(self.txtConfirmSenha, self.btnRegister)
+        MainWindow.setTabOrder(self.btnRegister, self.btnLogin)
+        MainWindow.setTabOrder(self.btnLogin, self.txtFundo1)
+        MainWindow.setTabOrder(self.txtFundo1, self.txtFundo1_2)
+        MainWindow.setTabOrder(self.txtFundo1_2, self.txtFundo1_3)
+        MainWindow.setTabOrder(self.txtFundo1_3, self.txtFundo1_4)
+        MainWindow.setTabOrder(self.txtFundo1_4, self.txtFundo1_5)
+        MainWindow.setTabOrder(self.txtFundo1_5, self.txtFundo2)
+        MainWindow.setTabOrder(self.txtFundo2, self.txtFundo2_2)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

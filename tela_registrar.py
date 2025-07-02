@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
+from PyQt6.uic import loadUi
 from telas.ui_telaRegistrar import Ui_MainWindow
 from sc_Organizar import ScOrganizarWindow
 import pymysql
@@ -6,10 +7,16 @@ import pymysql
 class RegistrarWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-        self.ui.btnRegister.clicked.connect(self.registrar_usuario)
-        self.ui.btnLogin.clicked.connect(self.telaLogin)
+        
+        loadUi("ui/registrar.ui", self)
+        
+        #self.ui = Ui_MainWindow()
+        #self.ui.setupUi(self)
+        
+        self.btnRegister.clicked.connect(self.registrar_usuario)
+        self.btnLogin.clicked.connect(self.telaLogin)
+        self.txtCelular.setInputMask('(00) 00000-0000;_') 
+
 
     def telaInicial(self):
         self.inicial_window = ScOrganizarWindow()
@@ -23,16 +30,20 @@ class RegistrarWindow(QMainWindow):
         self.close()
 
     def registrar_usuario(self):
-        nome = self.ui.txtNome.text().strip()
-        matricula = self.ui.txtMatricula.text().strip()
-        curso = self.ui.txtCurso.text().strip()
-        celular = self.ui.txtCelular.text().strip()
-        senha = self.ui.txtSenha.text().strip()
-        senhaConfirm = self.ui.txtConfirmSenha.text().strip()
-        email = self.ui.txtEmail.text().strip()
+        nome = self.txtNome.text().strip()
+        matricula = self.txtMatricula.text().strip()
+        curso = self.txtCurso.text().strip()
+        celular = self.txtCelular.text().strip()
+        senha = self.txtSenha.text().strip()
+        senhaConfirm = self.txtConfirmSenha.text().strip()
+        email = self.txtEmail.text().strip()
 
         if not email or not senha or not nome or not matricula or not curso or not celular:
             QMessageBox.warning(self, "Campos vazios", "Preencha todos os campos.")
+            return
+        
+        if "@" not in email:
+            QMessageBox.warning(self, "Email inválido", "Esse email não é valido.")
             return
         
         if senha != senhaConfirm:

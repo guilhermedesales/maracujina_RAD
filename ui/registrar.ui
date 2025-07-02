@@ -650,6 +650,24 @@ margin:5px;</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>txtNome</tabstop>
+  <tabstop>txtEmail</tabstop>
+  <tabstop>txtMatricula</tabstop>
+  <tabstop>txtCurso</tabstop>
+  <tabstop>txtCelular</tabstop>
+  <tabstop>txtSenha</tabstop>
+  <tabstop>txtConfirmSenha</tabstop>
+  <tabstop>btnRegister</tabstop>
+  <tabstop>btnLogin</tabstop>
+  <tabstop>txtFundo1</tabstop>
+  <tabstop>txtFundo1_2</tabstop>
+  <tabstop>txtFundo1_3</tabstop>
+  <tabstop>txtFundo1_4</tabstop>
+  <tabstop>txtFundo1_5</tabstop>
+  <tabstop>txtFundo2</tabstop>
+  <tabstop>txtFundo2_2</tabstop>
+ </tabstops>
  <resources>
   <include location="../res.qrc"/>
  </resources>
