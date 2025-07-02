@@ -60,7 +60,7 @@ e então mudar no arquivo 'db_config.py' o DB_USER pra "user" e DB_PASS pra "pas
 
 -------------------------------------------------------------------------------------
 
--- Gerar arquivos a partir do Qt Designer
+-- Gerar arquivos a partir do Qt Designer (não é mais necessário, agora o projeto usa o único q faz isso automaticamente)
 
 Sempre que você **alterar uma tela .ui**, gere o .py correspondente:
 
