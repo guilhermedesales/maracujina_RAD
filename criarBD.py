@@ -38,7 +38,7 @@ def ensure_database(
     password="root",
     port=3306,
 ):
-    """Cria o banco e tabelas se ainda não existirem."""
+
     conn = pymysql.connect(
         host=host,
         user=user,
