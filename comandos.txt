@@ -1,23 +1,38 @@
-- converter o arquivo ui em py:
-    (fazer isso sempre q alterar a tela no QtDesigner)
+Requisitos do projeto
 
-** pyuic6 -o telas/ui_arquivo.py ui/arq.ui **
-** python -m PyQt6.uic.pyuic -o telas/ui_arquivo.py ui/arquivo.ui ** (caso o de cima não funcione)
+* Python 3.13.5 (usado no desenvolvimento)
 
-------------------------------------------------------------------------------------------
-- converter arquivo qrc em py:
-    (depois de converter tem q mudar no arquivo py gerado o import para pyqt6)
-    (fazer isso sempre q adicionar imagem no arquivo qrc)
+* Execute o main 
 
-** python -m PyQt5.pyrcc_main res.qrc -o res_rc.py **
+    python main.py
 
-------------------------------------------------------------------------------------------
-- pip install:
+* Pacotes necessários (instale com pip):
 
-pip install pymysql
-pip install pyqt6
-pip install pyqt6_tools (nem sempre é preciso)
-pip install reportlab
+    pip install pymysql
+    pip install pyqt6
+    pip install pyqt6_tools     # (nem sempre necessário)
+    pip install reportlab
+
+* Use `requirements.txt` para instalar tudo de uma vez:
+
+    pip install -r requirements.txt
 
 
-** versão do python usada: 3.13.5
+-- Gerar arquivos a partir do Qt Designer
+
+Sempre que você **alterar uma tela .ui**, gere o .py correspondente:
+
+*Converter .ui para .py:
+
+    pyuic6 -o telas/ui_arquivo.py ui/arquivo.ui
+    # Se não funcionar:
+    python -m PyQt6.uic.pyuic -o telas/ui_arquivo.py ui/arquivo.ui
+
+
+-- Gerar imagens do arquivo .qrc (resources):
+
+*Sempre que adicionar imagens no .qrc, gere o .py:
+
+    python -m PyQt6.pyrcc_main res.qrc -o res_rc.py
+
+***Após gerar, se aparecer `from PyQt5`, mude para `from PyQt6` no topo do arquivo `res_rc.py`
